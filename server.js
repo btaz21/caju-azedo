@@ -1,24 +1,42 @@
+// DEPENDENCIES
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
-const app = express()
+
+
+// CONFIGURATION
 require('dotenv').config()
-
+const app = express()
 const PORT = process.env.PORT
-
 const MONGODB_URI = process.env.MONGODB_URI;
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false } );
 
+// DATABASE
+mongoose.connect(MONGODB_URI,
+  { useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  })
+
+
+// MIDDLEWARE
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}))
-app.use(express.json())
 app.use(methodOverride('_method'))
 
+
+// CONTROLLERS
+const foodsController = require('./controllers/foods_controller.js')
+app.use('/foods', foodsController)
+
+
+// ROUTES
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.redirect('/foods')
 })
 
+
+// LISTENER
 app.listen(PORT, () => {
   console.log('listening...');
 })
