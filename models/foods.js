@@ -6,7 +6,6 @@ const foodsSchema = new mongoose.Schema(
     short_description: String,
     description: String,
     etymology: String,
-    region: Array,
     img: String,
     recipe: String
   },
