@@ -29,6 +29,8 @@ app.use(methodOverride('_method'))
 const foodsController = require('./controllers/foods_controller.js')
 app.use('/foods', foodsController)
 
+const mealPlansController = require('./controllers/mealplans_controller.js')
+app.use('/mealplans', mealPlansController)
 
 // ROUTES
 app.get('/', (req, res) => {

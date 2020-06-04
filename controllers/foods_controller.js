@@ -52,6 +52,14 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 
+// UPDATE
+router.put('/:id', (req, res) => {
+  Food.findByIdAndUpdate(req.params.id, req.body, (error, updatedFood) => {
+    console.log(updatedFood);
+    res.redirect('/foods')
+  })
+})
+
 // DELETE
 router.delete('/:id', (req, res) => {
   Food.findByIdAndRemove(req.params.id, (error, deletedFood) => {

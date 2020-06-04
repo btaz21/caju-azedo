@@ -11,6 +11,11 @@ body {
   flex-wrap: wrap;
 }
 
+.show-container {
+  display: flex;
+  justify-content: center;
+}
+
 .index-cards {
   width: 20%;
 }
