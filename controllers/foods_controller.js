@@ -1,7 +1,6 @@
-const Food = require('../models/foods.js')
 const express = require('express')
 const router = express.Router()
-
+const Food = require('../models/foods.js')
 
 // NEW
 router.get('/new', (req, res) => {

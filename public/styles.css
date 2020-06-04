@@ -35,6 +35,7 @@ body {
 }
 
 /* make it so that the image fades out and text appear with name of dish */
-/* .index-img:hover {
-  display: none;
-} */
+.index-img:hover {
+  opacity: 0%;
+  transition: .5s ease-in-out;
+}

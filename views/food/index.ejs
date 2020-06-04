@@ -11,7 +11,7 @@
       <% for (let i = 0; i < foods.length; i++) { %>
           <div class="index-cards">
             <h3><%= foods[i].name %></h3>
-            <a href="foods/<%= foods[i].id %>"><img class="index-img" src="<%= foods[i].img %>" alt="<%=foods[i].name%>"></a> 
+            <a href="foods/<%= foods[i].id %>"><img class="index-img" src="<%= foods[i].img %>" alt="<%=foods[i].name%>"></a>
             <p><%= foods[i].description %></p>
           </div>
       <% } %>
