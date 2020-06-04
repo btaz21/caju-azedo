@@ -15,7 +15,7 @@
               let month = date.getMonth()
               let year = date.getFullYear()
               let fullDate = (`${month}/${day}/${year}`) %>
-              <h1><%= fullDate %></h1>
+              <h1><a href="/mealplans/<%=plans[i].id%>"><%= fullDate %></a></h1>
               <h1>Breakfast</h1>
               <p><%= plans[i].breakfast %></p>
               <h1>Lunch</h1>

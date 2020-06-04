@@ -36,7 +36,44 @@ router.get('/', (req, res) => {
   })
 })
 
+// SHOW
+router.get('/:id', (req, res) => {
+  MealPlan.findById(req.params.id, (error, foundPlan) => {
+    res.render(
+      'mealplans/show.ejs',
+      {
+        plan:foundPlan
+      }
+    )
+  })
+})
 
+// EDIT
+router.get('/:id/edit', (req, res) => {
+  MealPlan.findById(req.params.id, (error, foundPlan) => {
+    res.render(
+      'mealplans/edit.ejs',
+      {
+        plan:foundPlan
+      }
+    )
+  })
+})
+
+// UPDATE
+router.put('/:id', (req, res) => {
+  MealPlan.findByIdAndUpdate(req.params.id, req.params.body, (error, updatedPlan) => {
+    res.redirect('/mealplans')
+  })
+})
+
+
+// DELETE
+router.delete('/:id', (req, res) => {
+  MealPlan.findByIdAndRemove(req.params.id, (error, deletedPlan) => {
+    res.redirect('/mealplans')
+  })
+})
 
 
 // DROP DATABASE

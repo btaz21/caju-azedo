@@ -5,13 +5,14 @@
     <title></title>
     <link rel="stylesheet" href="../styles.css">
   </head>
-  <body>
-    <h1>Indigenous Foods of Brazil</h1>
+  <body class="show-body">
+    <%- include ('../partials/nav.ejs') %>
     <div class="show-container">
       <div class="show-card">
         <h3><%= food.name %></h3>
         <img class="show-img" src="<%= food.img %>" alt="<%= food.name %>">
         <p><%= food.description %></p>
+        <img class="show-img" src="<%= food.recipe %>" alt="">
         <a href="/foods/<%=food.id%>/edit">Edit Dish</a>
         <form class="show-delete" action="/foods/<%=food.id%>?_method=DELETE" method="post">
           <input type="submit" value="Delete">
