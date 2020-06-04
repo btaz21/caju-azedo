@@ -28,6 +28,30 @@ router.get('/', (req, res) => {
   })
 })
 
+// SHOW
+router.get('/:id', (req, res) => {
+  Food.findById(req.params.id, (error, foundFood) => {
+    res.render(
+      'food/show.ejs',
+      {
+        food:foundFood
+      }
+    )
+  })
+})
+
+// EDIT
+router.get('/:id/edit', (req, res) => {
+  Food.findById(req.params.id, (error, foundFood) => {
+    res.render(
+      'food/edit.ejs',
+      {
+        food:foundFood
+      }
+    )
+  })
+})
+
 
 // SEED
 // router.get('/seed', (req, res) => {

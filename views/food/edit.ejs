@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <h1>Edit Food</h1>
+    <form class="new-form" action="/foods?_method=PUT" method="POST">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" value="<%= food.name %>">
+      <label for="description">Description</label>
+      <textarea id="description" name="description"><%= food.description %></textarea>
+      <label for="img">Image Link</label>
+      <input id="img" type="text" name="img" value="<%= food.img %>">
+      <label for="recipe">Recipe</label>
+      <input id="recipe" type="text" name="recipe" value=<%= food.recipe %>>
+      <input type="submit" value="CREATE NEW FOOD">
+  </body>
+</html>

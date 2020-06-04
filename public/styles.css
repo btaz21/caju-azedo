@@ -15,7 +15,21 @@ body {
   width: 20%;
 }
 
-img {
+.show-card {
+  width: 33%;
+}
+
+.show-img {
   width: 100%;
   max-height: 350px;
 }
+
+.index-img {
+  width: 100%;
+  max-height: 350px;
+}
+
+/* make it so that the image fades out and text appear with name of dish */
+/* .index-img:hover {
+  display: none;
+} */
