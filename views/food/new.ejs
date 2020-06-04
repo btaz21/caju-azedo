@@ -3,19 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
-    <h1>Create New Food Page</h1>
-    <form class="new-form" action="/foods" method="POST">
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name">
-      <label for="description">Description</label>
-      <textarea id="description" name="description"></textarea>
-      <label for="img">Image Link</label>
-      <input id="img" type="text" name="img">
-      <label for="recipe">Recipe</label>
-      <input id="recipe" type="text" name="recipe">
-      <input type="submit" value="CREATE NEW FOOD">
-    </form>
+    <div class="container">
+      <div class="add-dish">
+        <h1>Create New Dish</h1>
+        <form class="new-form" action="/foods" method="POST">
+          <fieldset class="all-info">
+            <legend>Details of the Dish</legend>
+            <!-- name of dish -->
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+            <!-- brief description -->
+            <label for="short-description">Short Description</label>
+            <textarea id="short-description" name="short_description"></textarea>
+            <!-- longer description -->
+            <label for="long-description">Long Description</label>
+            <textarea id="long-description" name="description"></textarea>
+            <!-- etymology -->
+            <label for="etymology">Etymology of Name</label>
+            <input id="etymology" type="text" name="etymology">
+            <!-- image link -->
+            <label for="img">Image Link</label>
+            <input id="img" type="text" name="img">
+            <!-- recipe link -->
+            <label for="recipe">Recipe</label>
+            <input id="recipe" type="text" name="recipe">
+            <!-- submit form -->
+            <input type="submit" value="CREATE NEW FOOD">
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
