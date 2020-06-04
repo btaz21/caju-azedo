@@ -7,7 +7,6 @@ const Food = require('../models/foods.js')
 // NEW
 router.get('/new', (req, res) => {
   Food.find({}, (error, allFoods) => {
-    console.log(allFoods);
     res.render(
       'mealplans/new.ejs',
       {
@@ -18,8 +17,8 @@ router.get('/new', (req, res) => {
 })
 
 // CREATE
-router.post('/new', (req, res) => {
-  console.log(req.body.id);
+router.post('/', (req, res) => {
+  console.log(req.body);
   MealPlan.create(req.body, (error, createdPlan) => {
     res.redirect('/mealplans')
   })
@@ -29,7 +28,7 @@ router.post('/new', (req, res) => {
 router.get('/', (req, res) => {
   MealPlan.find({}, (error, allPlans) => {
     res.render(
-      'mealplans/index.ejs'
+      'mealplans/index.ejs',
       {
         plans:allPlans
       }

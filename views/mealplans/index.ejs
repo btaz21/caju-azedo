@@ -3,8 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
     <h1>Meal Plan Index Page</h1>
+    <div class="plan-index-container">
+        <% for (let i = 0; i < plans.length; i++) { %>
+            <div class="plan-index-card">
+              <% let date = new Date(plans[i].createdAt)
+              let day = date.getDate()
+              let month = date.getMonth()
+              let year = date.getFullYear()
+              let fullDate = (`${month}/${day}/${year}`) %>
+              <h1><%= fullDate %></h1>
+              <h1>Breakfast</h1>
+              <p><%= plans[i].breakfast %></p>
+              <h1>Lunch</h1>
+              <p><%= plans[i].lunch %></p>
+              <h1>Dinner</h1>
+              <p><%= plans[i].dinner %></p>
+              <h1>Dessert</h1>
+              <p><%= plans[i].dessert %></p>
+              <h1>Libations</h1>
+              <p><%= plans[i].libations %></p>
+            </div>
+        <% } %>
+    </div>
   </body>
 </html>

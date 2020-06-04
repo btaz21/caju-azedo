@@ -39,3 +39,13 @@ body {
   opacity: 0%;
   transition: .5s ease-in-out;
 }
+
+.plan-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.plan-index-card {
+  width: 15%;
+}
