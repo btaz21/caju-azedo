@@ -18,7 +18,10 @@ body {
   background-size: cover;
 }
 
+/* ======= */
 /* NAVBAR */
+/* ===== */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -56,9 +59,9 @@ nav a {
 }
 
 
-/* ===== */
+/* ====== */
 /* INDEX */
-/* ===== */
+/* ==== */
 
 
 .index-name {
@@ -94,7 +97,7 @@ nav a {
 
 .index-img {
   width: 100%;
-  max-height: 180px;
+  max-height: 190px;
   border-radius: 2%;
 }
 
