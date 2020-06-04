@@ -69,8 +69,8 @@ router.put('/:id', (req, res) => {
 
 
 // DELETE
-router.delete('/:id', (req, res) => {
-  MealPlan.findByIdAndRemove(req.params.id, (error, deletedPlan) => {
+router.delete('/', (req, res) => {
+  MealPlan.findByIdAndRemove(req.body.id, (error, deletedPlan) => {
     res.redirect('/mealplans')
   })
 })

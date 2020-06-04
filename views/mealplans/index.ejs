@@ -6,26 +6,45 @@
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
+    <%- include ('../partials/nav.ejs') %>
     <h1>Meal Plan Index Page</h1>
     <div class="plan-index-container">
         <% for (let i = 0; i < plans.length; i++) { %>
             <div class="plan-index-card">
-              <% let date = new Date(plans[i].createdAt)
-              let day = date.getDate()
-              let month = date.getMonth()
-              let year = date.getFullYear()
-              let fullDate = (`${month}/${day}/${year}`) %>
-              <h1><a href="/mealplans/<%=plans[i].id%>"><%= fullDate %></a></h1>
-              <h1>Breakfast</h1>
-              <p><%= plans[i].breakfast %></p>
-              <h1>Lunch</h1>
-              <p><%= plans[i].lunch %></p>
-              <h1>Dinner</h1>
-              <p><%= plans[i].dinner %></p>
-              <h1>Dessert</h1>
-              <p><%= plans[i].dessert %></p>
-              <h1>Libations</h1>
-              <p><%= plans[i].libations %></p>
+              <div class="date">
+                <% let date = new Date(plans[i].createdAt)
+                let day = date.getDate()
+                let month = date.getMonth()
+                let year = date.getFullYear()
+                let fullDate = (`${month}/${day}/${year}`) %>
+                <h1><a href="/mealplans/<%=plans[i].id%>"><%= fullDate %></a></h1>
+              </div>
+              <div class="plan-index-card-flex">
+                <div class="horarios">
+                  <h1>Breakfast</h1>
+                  <p><%= plans[i].breakfast %></p>
+                </div>
+                <div class="horarios">
+                  <h1>Lunch</h1>
+                  <p><%= plans[i].lunch %></p>
+                </div>
+                <div class="horarios">
+                  <h1>Dinner</h1>
+                  <p><%= plans[i].dinner %></p>
+                </div>
+                <div class="">
+                  <h1>Dessert</h1>
+                  <p><%= plans[i].dessert %></p>
+                </div>
+                <div class="">
+                  <h1>Libations</h1>
+                  <p><%= plans[i].libations %></p>
+                </div>
+              </div>
+              <form class="plan-form" action="/mealplans?_method=DELETE" method="post">
+                <input type="hidden" name="id" value="<%=plans[i].id%>">
+                <input type="submit" value="DELETE">
+              </form>
             </div>
         <% } %>
     </div>

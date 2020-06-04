@@ -97,7 +97,7 @@ nav a {
 
 .index-img {
   width: 100%;
-  max-height: 190px;
+  height: 190px;
   border-radius: 2%;
 }
 
@@ -128,16 +128,6 @@ nav a {
   width: 100%;
 }
 
-
-.plan-index-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.plan-index-card {
-  width: 15%;
-}
 
 
 /* ============== */
@@ -211,4 +201,38 @@ textarea {
 
 .add-dish h1 {
   margin: auto 25%;
+}
+
+
+/* INDEX PAGE PLANS */
+
+
+.plan-index-card {
+  width: 75%;
+  text-align: center;
+  margin: 25px auto;
+  background: whitesmoke;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+
+}
+
+.plan-index-card-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.plan-form {
+  width: 15%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: var(--yellow);
+}
+
+.date a {
+  text-decoration: none;
+  color: black;
 }
