@@ -52,6 +52,14 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 
+// DELETE
+router.delete('/:id', (req, res) => {
+  Food.findByIdAndRemove(req.params.id, (error, deletedFood) => {
+    console.log(deletedFood)
+    res.redirect('/foods')
+  })
+})
+
 
 // SEED
 // router.get('/seed', (req, res) => {
