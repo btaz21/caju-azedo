@@ -236,3 +236,18 @@ h1 {
   text-decoration: none;
   color: black;
 }
+
+/* MEAL PLAN SHOW PAGE */
+
+.horario-show {
+  width: 20%;
+}
+
+.horario-show img {
+  width: 100%;
+}
+
+.horario-show h3, p {
+  color: white;
+  text-align: center;
+}

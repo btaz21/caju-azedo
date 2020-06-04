@@ -39,12 +39,29 @@ router.get('/', (req, res) => {
 // SHOW
 router.get('/:id', (req, res) => {
   MealPlan.findById(req.params.id, (error, foundPlan) => {
-    res.render(
-      'mealplans/show.ejs',
-      {
-        plan:foundPlan
-      }
-    )
+    Food.find({name:foundPlan.breakfast}, (error, foundBreakfast) => {
+      Food.find({name:foundPlan.lunch}, (error, foundLunch) => {
+        Food.find({name:foundPlan.dinner}, (error, foundDinner) => {
+          Food.find({name:foundPlan.dessert}, (error, foundDessert) => {
+            Food.find({name:foundPlan.libation}, (error, foundLibations) => {
+              console.log(foundBreakfast);
+              res.render(
+                'mealplans/show.ejs',
+                {
+                  data:
+                  {
+                    plan:foundPlan,
+                    breakfast:foundBreakfast,
+                    lunch:foundLunch,
+                    dinner:foundDinner
+                  }
+                }
+              )
+            })
+          })
+        })
+      })
+    })
   })
 })
 
