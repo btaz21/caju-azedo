@@ -29,6 +29,19 @@ router.get('/', (req, res) => {
 })
 
 
+// SEED
+// router.get('/seed', (req, res) => {
+//   Food.create(
+//     [
+//       {}
+//     ],
+//     (error, data) => {
+//       res.redirect('/')
+//     }
+//   )
+// })
+
+
 
 
 
