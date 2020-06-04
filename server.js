@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 // CONFIGURATION
 require('dotenv').config()
 const app = express()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 const MONGODB_URI = process.env.MONGODB_URI;
 
 
@@ -38,5 +38,5 @@ app.get('/', (req, res) => {
 
 // LISTENER
 app.listen(PORT, () => {
-  console.log('listening...');
+  console.log(`listening on port ${PORT}`);
 })

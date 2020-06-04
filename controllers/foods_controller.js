@@ -1,18 +1,30 @@
 const Food = require('../models/foods.js')
 const express = require('express')
-const foods = express.Router()
+const router = express.Router()
 
 
 // NEW
-foods.get('/new', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('food/new.ejs')
 })
 
 // CREATE
-foods.post('/', (req, res) => {
+router.post('/', (req, res) => {
   Food.create(req.body, (error, createdFood) => {
     console.log(createdFood);
     res.redirect('/foods')
+  })
+})
+
+// INDEX
+router.get('/', (req, res) => {
+  Food.find({}, (error, allFoods) => {
+    res.render(
+      'food/index.ejs',
+      {
+        foods:allFoods
+      }
+    )
   })
 })
 
@@ -30,4 +42,5 @@ foods.post('/', (req, res) => {
 
 
 
-module.exports = foods
+
+module.exports = router
