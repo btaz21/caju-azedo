@@ -2,11 +2,10 @@ const mongoose = require('mongoose')
 
 const mealPlansSchema = new mongoose.Schema(
   {
-    breakfast: String,
-    lunch: String,
-    dinner: String,
-    dessert: String,
-    libations: String,
+    breakfast: Array,
+    lunch: Array,
+    dinner: Array,
+    notes: String
   },
   {timestamps:true}
 )

@@ -7,7 +7,6 @@
   </head>
   <body>
     <%- include ('../partials/nav.ejs') %>
-    <h1>Meal Plan Index Page</h1>
     <div class="plan-index-container">
         <% for (let i = 0; i < plans.length; i++) { %>
             <div class="plan-index-card">
@@ -32,19 +31,13 @@
                   <h1>Dinner</h1>
                   <p><%= plans[i].dinner %></p>
                 </div>
-                <div class="">
-                  <h1>Dessert</h1>
-                  <p><%= plans[i].dessert %></p>
-                </div>
-                <div class="">
-                  <h1>Libations</h1>
-                  <p><%= plans[i].libations %></p>
-                </div>
               </div>
               <form class="plan-form" action="/mealplans?_method=DELETE" method="post">
                 <input type="hidden" name="id" value="<%=plans[i].id%>">
                 <input type="submit" value="DELETE">
               </form>
+              <button type="button" name="button">Add Note</button>
+              <button type="button" name="button">Edit</button>
             </div>
         <% } %>
     </div>

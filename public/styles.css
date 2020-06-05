@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee');
 
 :root {
-  --yellow: #c8a405;
+  --yellow: #d5b939;
   --green: #01391d;
+  --red: #543e3a;
 }
 
 * {
@@ -11,11 +12,14 @@
 
 body {
   /* text-align: center; */
-  font-family: 'Antic', sans-serif;
+  font-family: 'Handlee', cursive;
   margin: 0;
   padding: 0;
-  background-image: url(https://i.imgur.com/3cjaDDN.jpg);
+  background-image:
+    /* linear-gradient(black, black), */
+    url(https://i.imgur.com/gdqWq1g.jpg);
   background-size: cover;
+  /* background-blend-mode: saturation; */
 }
 
 /* ======= */
@@ -54,7 +58,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #c8a405;
+  color: var(--yellow);
   /* font-size: 1em; */
 }
 
@@ -85,7 +89,7 @@ nav a {
 
 
 .index-cards {
-  width: 300px;
+  width: 350px;
   margin-bottom: 40px;
   position: relative;
 }
@@ -97,8 +101,9 @@ nav a {
 
 .index-img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   border-radius: 2%;
+  border: 1px solid black;
 }
 
 /* make it so that the image fades out and text appear with name of dish */
@@ -131,7 +136,7 @@ nav a {
 
 
 /* ============== */
-/* NEW FOOD FORM */
+/*     FORMS     */
 /* ============= */
 
 .container {
@@ -161,7 +166,7 @@ legend {
 
 label {
   display: block;
-  text-align: left;
+  text-align: center;
   margin: 10px 0;
 }
 
@@ -186,6 +191,7 @@ input[type="submit"] {
   color: whitesmoke;
   border: 0px;
   transition: 0.2s ease-in-out;
+  margin: 30px auto;
 }
 
 input[type="submit"]:hover {
@@ -203,23 +209,36 @@ textarea {
   margin: auto 25%;
 }
 
+select {
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
 
-/* INDEX PAGE PLANS */
+.all-info {
+  width: 60%;
+  margin: 0 auto;
+}
 
+
+
+/* ======================== */
+/* INDEX PAGE [MEAL PLANS] */
+/* ====================== */
+
+.plan-index-container {
+  display: flex;
+  justify-content: space-around;
+}
 
 .plan-index-card {
-  width: 75%;
+  width: 20%;
   text-align: center;
-  margin: 25px auto;
   background: whitesmoke;
   border-radius: 10px;
   border: 2px solid #ccc;
+  margin-top: 40px;
 
-}
-
-.plan-index-card-flex {
-  display: flex;
-  justify-content: space-around;
 }
 
 .plan-form {
@@ -237,17 +256,38 @@ h1 {
   color: black;
 }
 
-/* MEAL PLAN SHOW PAGE */
 
-.horario-show {
-  width: 20%;
+
+
+/* MEAL PLAN NEW PAGE */
+
+.dish-rolodex {
+  display: flex;
 }
 
-.horario-show img {
+.cards {
+  width: 15%;
+}
+
+.cards img {
   width: 100%;
 }
 
-.horario-show h3, p {
-  color: white;
-  text-align: center;
+.display-container {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.display {
+  width: 23%;
+  border: 2px solid var(--yellow);
+  border-style: inset;
+}
+
+.display img {
+  width: 100%;
+  max-height: 210px;
 }

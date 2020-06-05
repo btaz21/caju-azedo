@@ -1,11 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const Food = require('../models/foods.js')
+const MealPlan = require('../models/mealplans.js')
 
 // NEW
 router.get('/new', (req, res) => {
   res.render('food/new.ejs')
 })
+
 
 // CREATE
 router.post('/', (req, res) => {
@@ -54,7 +56,6 @@ router.get('/:id/edit', (req, res) => {
 // UPDATE
 router.put('/:id', (req, res) => {
   Food.findByIdAndUpdate(req.params.id, req.body, (error, updatedFood) => {
-    console.log(updatedFood);
     res.redirect('/foods')
   })
 })
