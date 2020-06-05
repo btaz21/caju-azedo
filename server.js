@@ -2,6 +2,7 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+const session = require('express-session')
 
 
 // CONFIGURATION
@@ -23,6 +24,13 @@ mongoose.connect(MONGODB_URI,
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+)
 
 
 // CONTROLLERS
@@ -34,6 +42,10 @@ app.use('/mealplans', mealPlansController)
 
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
+
+const usersController = require('./controllers/users_controller.js')
+app.use('/users', usersController)
+
 
 // ROUTES
 app.get('/', (req, res) => {

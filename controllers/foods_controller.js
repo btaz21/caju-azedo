@@ -5,7 +5,11 @@ const MealPlan = require('../models/mealplans.js')
 
 // NEW
 router.get('/new', (req, res) => {
-  res.render('food/new.ejs')
+  res.render('food/new.ejs',
+  {
+    currentUser: req.session.currentUser
+  }
+)
 })
 
 
@@ -23,7 +27,8 @@ router.get('/', (req, res) => {
     res.render(
       'food/index.ejs',
       {
-        foods:allFoods
+        foods:allFoods,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -35,7 +40,8 @@ router.get('/:id', (req, res) => {
     res.render(
       'food/show.ejs',
       {
-        food:foundFood
+        food:foundFood,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -47,7 +53,8 @@ router.get('/:id/edit', (req, res) => {
     res.render(
       'food/edit.ejs',
       {
-        food:foundFood
+        food:foundFood,
+        currentUser: req.session.currentUser
       }
     )
   })

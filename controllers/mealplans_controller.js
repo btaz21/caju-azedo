@@ -10,7 +10,8 @@ router.get('/new', (req, res) => {
     res.render(
       'mealplans/new.ejs',
       {
-        foods:allFoods
+        foods:allFoods,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -30,7 +31,8 @@ router.get('/', (req, res) => {
     res.render(
       'mealplans/index.ejs',
       {
-        plans:allPlans
+        plans:allPlans,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -44,7 +46,8 @@ router.get('/edit', (req, res) => {
     res.render(
       'mealplans/edit.ejs',
       {
-        plan:foundPlan
+        plan:foundPlan,
+        currentUser: req.session.currentUser
       }
     )
   })

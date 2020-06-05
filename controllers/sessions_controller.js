@@ -1,4 +1,3 @@
-
 const bcrypt = require('bcrypt')
 const express = require('express')
 const router = express.Router()
@@ -8,10 +7,37 @@ router.get('/new', (req, res) => {
   res.render(
     'sessions/new.ejs',
     {
-      currentUser: req.sessions.currentUser
+      currentUser: req.session.currentUser
     }
   )
 })
 
+
+router.post('/', (req, res) => {
+  User.findOne({username:req.body.username}, (error, foundUser) => {
+    if(error) {
+      console.log(error)
+      res.send('database had an issue')
+    }
+    else if (!foundUser) {
+      res.send('<a href = "/">Sorry, matching user not found</a>')
+    }
+    else {
+      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+        req.session.currentUser = foundUser
+        res.redirect('/')
+      }
+      else {
+        res.send('<a href = "/">Sorry, password does not match</a>')
+      }
+    }
+  })
+})
+
+router.delete('/', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/')
+  })
+})
 
 module.exports = router

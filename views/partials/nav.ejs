@@ -1,11 +1,30 @@
 <nav>
-  <div class="logo">
-    <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
-    <h1><a href="/foods">Cajuzinho</a></h1>
-  </div>
+
+    <% if (currentUser) {%>
+      <div class="logo">
+        <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
+        <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.username%></a></h1>
+      </div>
+    <%} else {%>
+      <div class="logo">
+        <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
+        <h1><a href="/foods">Cajuzinho</a></h1>
+      </div>
+      <%}%>
   <ul>
     <li><a href="/mealplans/new">Create Meal Plans</a></li>
     <li><a href="/foods/new">Add New Dish</a></li>
     <li><a href="/mealplans">See Meal Plans</a></li>
+    <%if (currentUser) {%>
+        <li>
+          <form class="" action="index.html" method="post">
+            <input type="submit" value="Log Out">
+          </form>
+        </li>
+    <%}
+      else {%>
+        <li><a href="/users/new">Sign Up</a></li>
+        <li><a href="/sessions/new">Log In</a></li>
+    <%}%>
   </ul>
 </nav>
