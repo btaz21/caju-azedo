@@ -7,16 +7,22 @@
   </head>
   <body>
     <%- include ('../partials/nav.ejs') %>
+    <h1>New User</h1>
     <div class="container">
-      <h1>New User</h1>
       <form action="/users" method="POST">
         <label for="name">User Name</label>
         <input type="text" name="username" required>
-        <label for="color">Password:</label>
+        <label for="password">Password:</label>
         <input type="password" name="password">
-        <label for="fruit_icon">Pick a fruit:</label>
-        <select name="fruit_icon">
-          <option value="">caju</option>
+        <label for="name">First name:</label>
+        <input type="text" name="name">
+        <label for="color">Pick a color:</label>
+        <select name="color">
+          <option>red</option>
+          <option>forest green</option>
+          <option>tyrian</option>
+          <option>amaranth</option>
+          <option>sandstone</option>
         </select>
         <input type="submit" value="Submit">
       </form>

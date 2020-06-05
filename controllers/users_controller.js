@@ -22,4 +22,12 @@ router.post('/', (req, res) => {
   })
 })
 
+// DROP DATABASE
+// DO NOT PUSH TO PRODUCTION
+router.get('/dropallusers/cannotundo/areyousure/reallysure/okthen', (req, res) => {
+    User.collection.drop()
+    res.send('You did it! You dropped the database!')
+  }
+)
+
 module.exports = router

@@ -18,34 +18,36 @@
                 let fullDate = (`${month}/${day}/${year}`) %>
                 <h1><a href="/mealplans/<%=plans[i].id%>"><%= fullDate %></a></h1>
               </div>
-              <a href="/mealplans/edit">Edit</a>
+              <form class='form-flex' action="/mealplans?_method=DELETE" method="post">
+                <a href="/mealplans/edit">Edit</a>
+                <input type="hidden" name="id" value="<%=plans[i].id%>">
+                <input type="submit" value="Delete">
+              </form>
               <div class="plan-index-card-flex">
                 <div class="horarios">
-                  <h1>Breakfast: <%= plans[i].breakfast %></h1>
+                  <h3>Breakfast</h3>
+                  <h4><%= plans[i].breakfast %></h4>
                 </div>
                 <div class="horarios">
-                  <h1>Lunch: <%= plans[i].lunch %></h1>
+                  <h3>Lunch</h3>
+                  <h4><%= plans[i].lunch %></h4>
                 </div>
                 <div class="horarios">
-                  <h1>Dinner: <%= plans[i].dinner %></h1>
-                </div>
-                <div class="note">
-                  <h1>Notes:</h1>
-                  <p><%=plans[i].notes%></p>
+                  <h3>Dinner</h3>
+                  <h4><%= plans[i].dinner %></h4>
                 </div>
               </div>
-              <form action="/mealplans/note/edit?_method=PUT" method="post">
-                <h3>Add Note:</h3>
+              <div class="note">
+                <h3>Notes:</h3>
+                <p><%=plans[i].notes%></p>
+              </div>
+              <form class="form" action="/mealplans/note/edit?_method=PUT" method="post">
                 <input type="hidden" name="id" value="<%=plans[i].id%>">
                 <textarea id="textarea" name="notes"></textarea>
-                <input type="submit" value="SUBMIT" name="note">
+                <div class="submit">
+                  <input type="submit" value="Submit Note" name="note">
+                </div>
               </form>
-              <div class="buttons">
-                <form class="plan-form" action="/mealplans?_method=DELETE" method="post">
-                  <input type="hidden" name="id" value="<%=plans[i].id%>">
-                  <input type="submit" value="DELETE">
-                </form>
-              </div>
             </div>
         <% } %>
     </div>

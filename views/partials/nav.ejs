@@ -1,10 +1,23 @@
 <nav>
-
-    <% if (currentUser) {%>
-      <div class="logo">
-        <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
-        <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.username%></a></h1>
-      </div>
+    <% if (currentUser) {
+        if (currentUser.color === 'red') {%>
+          <div class="logo">
+            <img src="https://i.imgur.com/QZt5TSB.png" alt="logo">
+            <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
+          </div>
+        <%}
+        else if (currentUser.color === 'forest green') { %>
+          <div class="logo">
+            <img src="https://i.imgur.com/FCFvq1M.png" alt="logo">
+            <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
+          </div>
+        <% }
+        else {%>
+          <div class="logo">
+            <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
+            <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
+          </div>
+        <%}%>
     <%} else {%>
       <div class="logo">
         <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
@@ -17,7 +30,7 @@
     <li><a href="/mealplans">See Meal Plans</a></li>
     <%if (currentUser) {%>
         <li>
-          <form class="" action="index.html" method="post">
+          <form action="/sessions?_method=DELETE" method="POST">
             <input type="submit" value="Log Out">
           </form>
         </li>
