@@ -2,13 +2,13 @@
     <% if (currentUser) {
         if (currentUser.color === 'red') {%>
           <div class="logo">
-            <img src="https://i.imgur.com/QZt5TSB.png" alt="logo">
+            <a href="/foods"><img src="https://i.imgur.com/QZt5TSB.png" alt="logo"></a>
             <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
           </div>
         <%}
         else if (currentUser.color === 'forest green') { %>
           <div class="logo">
-            <img src="https://i.imgur.com/FCFvq1M.png" alt="logo">
+            <a href="/foods"><img src="https://i.imgur.com/FCFvq1M.png" alt="logo"></a>
             <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
           </div>
         <% }
