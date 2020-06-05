@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 
 
 // EDIT
-router.get('/:id/edit', (req, res) => {
+router.get('/edit', (req, res) => {
   MealPlan.findById(req.params.id, (error, foundPlan) => {
     res.render(
       'mealplans/edit.ejs',
@@ -52,13 +52,20 @@ router.get('/:id/edit', (req, res) => {
 
 
 // UPDATE
-router.put('/:id', (req, res) => {
-  MealPlan.findByIdAndUpdate(req.params.id, req.params.body, (error, updatedPlan) => {
+router.put('/edit', (req, res) => {
+  MealPlan.findByIdAndUpdate(req.body.id, req.body, (error, updatedPlan) => {
     res.redirect('/mealplans')
   })
 })
 
 
+// UPDATE
+router.put('/note/edit', (req, res) => {
+  MealPlan.findByIdAndUpdate(req.body.id, req.body, (error, updatedPlan) => {
+    console.log(updatedPlan);
+    res.redirect('/mealplans')
+  })
+})
 
 // DELETE
 router.delete('/', (req, res) => {

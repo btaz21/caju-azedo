@@ -4,6 +4,7 @@
   --yellow: #d5b939;
   --green: #01391d;
   --red: #543e3a;
+  --darkgreen: #1c492c;
 }
 
 * {
@@ -15,11 +16,8 @@ body {
   font-family: 'Handlee', cursive;
   margin: 0;
   padding: 0;
-  background-image:
-    /* linear-gradient(black, black), */
-    url(https://i.imgur.com/gdqWq1g.jpg);
+  background-image: url(https://i.imgur.com/DuC0UTE.jpg);
   background-size: cover;
-  /* background-blend-mode: saturation; */
 }
 
 /* ======= */
@@ -29,7 +27,7 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background-color: transparent;
 }
 
 .logo {
@@ -83,7 +81,7 @@ nav a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 40px auto;
+  margin: 60px;
 }
 
 
@@ -92,6 +90,7 @@ nav a {
   width: 350px;
   margin-bottom: 40px;
   position: relative;
+
 }
 
 .index-cards:hover .index-name {
@@ -103,7 +102,7 @@ nav a {
   width: 100%;
   height: 200px;
   border-radius: 2%;
-  border: 1px solid black;
+  box-shadow: 6px 6px #112121;
 }
 
 /* make it so that the image fades out and text appear with name of dish */
@@ -146,7 +145,7 @@ nav a {
   color: whitesmoke;
   /* border: 1px solid #ccc; */
   margin: 20px auto;
-  width: 600px;
+  width: 1000px;
 }
 
 .new-form {
@@ -249,6 +248,7 @@ select {
 h1 {
   text-align: center;
   color: var(--yellow);
+  margin: 0;
 }
 
 .date a {
@@ -257,6 +257,20 @@ h1 {
 }
 
 
+.buttons form {
+  width: 70%;
+}
+
+.plan-form input {
+  width: 100%;
+}
+
+#textarea {
+  height: 100px;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 
 /* MEAL PLAN NEW PAGE */
