@@ -32,6 +32,9 @@ app.use('/foods', foodsController)
 const mealPlansController = require('./controllers/mealplans_controller.js')
 app.use('/mealplans', mealPlansController)
 
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
+
 // ROUTES
 app.get('/', (req, res) => {
   res.redirect('/foods')
