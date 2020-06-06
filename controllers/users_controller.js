@@ -5,7 +5,7 @@ const router = express.Router()
 const User = require('../models/users.js')
 
 router.get('/new', (req, res) => {
-  // req.flash('info', 'falsh message added')
+  // req.flash('info', 'flash message added')
   console.log(req.session.currentUser);
   res.render(
     'users/new.ejs',

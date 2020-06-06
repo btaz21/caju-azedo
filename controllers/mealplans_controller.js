@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const MealPlan = require('../models/mealplans.js')
 const Food = require('../models/foods.js')
+const User = require('../models/users.js')
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
     return next()
@@ -27,7 +28,6 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
-  console.log(req.body);
   MealPlan.create(req.body, (error, createdPlan) => {
     res.redirect('/mealplans')
   })
