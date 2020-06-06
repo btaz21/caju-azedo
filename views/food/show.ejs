@@ -10,12 +10,14 @@
     <div class="show-container">
       <div class="show-image">
         <h1><%= food.name %></h1>
-        <div class="a-tags">
-          <a href="/foods/<%=food.id%>/edit">Edit Dish</a>
+        <div class="double-trouble">
+          <div class="a-tags">
+            <a href="/foods/<%=food.id%>/edit">Edit Dish</a>
+          </div>
+          <form class="show-delete" action="/foods/<%=food.id%>?_method=DELETE" method="post">
+            <input type="submit" value="Delete">
+          </form>
         </div>
-        <form class="show-delete" action="/foods/<%=food.id%>?_method=DELETE" method="post">
-          <input type="submit" value="Delete">
-        </form>
         <img class="show-img" src="<%= food.img %>" alt="<%= food.name %>">
       </div>
       <div class="show-info">

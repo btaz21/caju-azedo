@@ -1,11 +1,12 @@
 const seed = [
   {
-    name: "Canjica",
-    short_description: String,
-    long_description: String,
-    img: String,
-    recipe: String,
-    origin:
-    etymology:
+    name: "Beijinho",
+    short_description: "",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/HxdL3B3.png",
+    recipe: ""
   }
 ]
+
+module.exports = seed

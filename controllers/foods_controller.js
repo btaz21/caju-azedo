@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Food = require('../models/foods.js')
 const MealPlan = require('../models/mealplans.js')
+const seed = require('../models/seed.js')
 
 // NEW
 router.get('/new', (req, res) => {
@@ -77,16 +78,12 @@ router.delete('/:id', (req, res) => {
 
 
 // SEED
-// router.get('/seed', (req, res) => {
-//   Food.create(
-//     [
-//       {}
-//     ],
-//     (error, data) => {
-//       res.redirect('/')
-//     }
-//   )
-// })
+router.get('/seed/starterdata', (req, res) => {
+  Food.create(seed, (error, data) => {
+      res.redirect('/')
+    }
+  )
+})
 
 
 
