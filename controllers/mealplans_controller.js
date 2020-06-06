@@ -2,10 +2,18 @@ const express = require('express')
 const router = express.Router()
 const MealPlan = require('../models/mealplans.js')
 const Food = require('../models/foods.js')
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  }
+  else {
+    res.redirect('/sessions/new')
+  }
+}
 
 
 // NEW
-router.get('/new', (req, res) => {
+router.get('/new', isAuthenticated, (req, res) => {
   Food.find({}, (error, allFoods) => {
     res.render(
       'mealplans/new.ejs',
@@ -26,7 +34,7 @@ router.post('/', (req, res) => {
 })
 
 // INDEX
-router.get('/', (req, res) => {
+router.get('/', isAuthenticated, (req, res) => {
   MealPlan.find({}, (error, allPlans) => {
     res.render(
       'mealplans/index.ejs',
@@ -64,9 +72,14 @@ router.put('/edit', (req, res) => {
 
 // UPDATE
 router.put('/note/edit', (req, res) => {
-  MealPlan.findByIdAndUpdate(req.body.id, req.body, (error, updatedPlan) => {
-    console.log(updatedPlan);
-    res.redirect('/mealplans')
+  console.log(req.body.notes);
+  MealPlan.findById(req.body.id, (error, foundPlan) => {
+    foundPlan.notes.push(req.body.notes)
+    foundPlan.save((error, data) => {
+      res.redirect('/mealplans')
+      console.log(foundPlan);
+      console.log(error);
+    })
   })
 })
 

@@ -19,24 +19,7 @@ body {
   position: relative;
 }
 
-.side-tab {
-  position: fixed;
-  height: 220px;
-  width: 40px;
-  top: 385px;
-  left: 0px;
-  background-color: var(--yellow);
-  border-radius: 0px 5px 5px 0px;
-}
 
-.side-tab a {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  margin-top: 20px;
-  margin-left: 8px;
-  text-decoration: none;
-  color: black;
-}
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -82,6 +65,7 @@ nav ul {
   display: flex;
   align-items: center;
   padding: 0;
+  margin: 0;
 }
 
 nav li {
@@ -92,7 +76,7 @@ nav li {
 nav a {
   text-decoration: none;
   color: var(--yellow);
-  /* font-size: 1em; */
+  font-size: 1.4em;
 }
 
 nav a:hover {
@@ -139,10 +123,29 @@ nav a:hover {
   display:block;
 }
 
+
 /* ====== */
 /* INDEX */
 /* ==== */
 
+.side-tab {
+  position: fixed;
+  height: 225px;
+  width: 40px;
+  top: 385px;
+  left: 0px;
+  background-color: var(--yellow);
+  border-radius: 0px 5px 5px 0px;
+}
+
+.side-tab a {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-top: 20px;
+  margin-left: 8px;
+  text-decoration: none;
+  color: black;
+}
 
 .index-name {
   color: white;
@@ -153,6 +156,7 @@ nav a:hover {
   top: 40%;
   text-align: center;
   width: 100%;
+  text-decoration: none;
 }
 
 .index-cards:hover .index-name {
@@ -206,7 +210,7 @@ nav a:hover {
 }
 
 .show-container {
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 .show-image {
@@ -300,11 +304,17 @@ nav a:hover {
   background-size: cover;
 }
 
+.food-edit-body {
+  background-image: url(https://i.imgur.com/IJuwr1d.jpg);
+  background-size: cover;
+}
+
 .container {
   display: flex;
   justify-content: center;
   color: whitesmoke;
-  margin: 20px auto;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .new-form {
@@ -481,6 +491,11 @@ h3 {
   box-sizing: border-box;
 }
 
+.notes-scroll {
+  overflow-y: scroll;
+  height: 150px;
+  margin: 10px;
+}
 
 /* MEAL PLAN NEW PAGE */
 

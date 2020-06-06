@@ -3,9 +3,17 @@ const router = express.Router()
 const Food = require('../models/foods.js')
 const MealPlan = require('../models/mealplans.js')
 const seed = require('../models/seed.js')
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  }
+  else {
+    res.redirect('/sessions/new')
+  }
+}
 
 // NEW
-router.get('/new', (req, res) => {
+router.get('/new', isAuthenticated, (req, res) => {
   res.render('food/new.ejs',
   {
     currentUser: req.session.currentUser
@@ -49,7 +57,7 @@ router.get('/:id', (req, res) => {
 })
 
 // EDIT
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', isAuthenticated, (req, res) => {
   Food.findById(req.params.id, (error, foundFood) => {
     res.render(
       'food/edit.ejs',
@@ -69,7 +77,7 @@ router.put('/:id', (req, res) => {
 })
 
 // DELETE
-router.delete('/:id', (req, res) => {
+router.delete('/:id', isAuthenticated, (req, res) => {
   Food.findByIdAndRemove(req.params.id, (error, deletedFood) => {
     console.log(deletedFood)
     res.redirect('/foods')
@@ -78,7 +86,7 @@ router.delete('/:id', (req, res) => {
 
 
 // SEED
-router.get('/seed/starterdata', (req, res) => {
+router.get('/seed/starterdata', isAuthenticated, (req, res) => {
   Food.create(seed, (error, data) => {
       res.redirect('/')
     }

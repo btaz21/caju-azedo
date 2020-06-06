@@ -39,13 +39,17 @@
               </div>
               <div class="note">
                 <h3>Notes:</h3>
-                <p><%=plans[i].notes%></p>
+                <div class="notes-scroll">
+                  <% for (let j = 0; j < plans[i].notes.length; j++) { %>
+                    <p><%=plans[i].notes[j]%></p>
+                  <%}%>
+                </div>
               </div>
               <form class="form" action="/mealplans/note/edit?_method=PUT" method="post">
                 <input type="hidden" name="id" value="<%=plans[i].id%>">
                 <textarea id="textarea" name="notes"></textarea>
                 <div class="submit">
-                  <input type="submit" value="Submit Note" name="note">
+                  <input type="submit" value="Submit Note">
                 </div>
               </form>
             </div>

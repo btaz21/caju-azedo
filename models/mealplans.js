@@ -5,7 +5,7 @@ const mealPlansSchema = new mongoose.Schema(
     breakfast: Array,
     lunch: Array,
     dinner: Array,
-    notes: String
+    notes: Array
   },
   {timestamps:true}
 )
