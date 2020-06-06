@@ -5,6 +5,7 @@ const router = express.Router()
 const User = require('../models/users.js')
 
 router.get('/new', (req, res) => {
+  // req.flash('info', 'falsh message added')
   console.log(req.session.currentUser);
   res.render(
     'users/new.ejs',
@@ -15,10 +16,18 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
-  User.create(req.body, (error, createdUser) => {
-    console.log('user is created', createdUser);
-    res.redirect('/')
+  User.findOne({username:req.body.username}, (error, foundUser) => {
+    if (foundUser) {
+      req.flash('info', 'Username has been taken!')
+      res.redirect('/users/new')
+    }
+    else {
+      req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+      User.create(req.body, (error, createdUser) => {
+        console.log('user is created', createdUser);
+        res.redirect('/')
+      })
+    }
   })
 })
 

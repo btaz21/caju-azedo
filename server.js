@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const session = require('express-session')
+const flash = require('express-flash')
 
 
 // CONFIGURATION
@@ -21,6 +22,7 @@ mongoose.connect(MONGODB_URI,
 
 
 // MIDDLEWARE
+app.use(flash());
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))

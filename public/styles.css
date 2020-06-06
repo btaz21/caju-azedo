@@ -15,11 +15,7 @@ body {
   font-family: 'Handlee', cursive;
   margin: 0;
   padding: 0;
-  /* background-image: url(https://i.imgur.com/itYfj8U.jpg); */
-  background-image: url(https://i.imgur.com/MNVZU6G.jpg);
-  /* background-image: url(https://i.imgur.com/RFxeQl3.jpg); */
-  /* background-image: url(https://i.imgur.com/DuC0UTE.jpg); */
-  background-size: cover;
+  background-color: #161616;
   position: relative;
 }
 
@@ -254,6 +250,21 @@ nav a:hover {
 /*     FORMS     */
 /* ============= */
 
+.new-user {
+  background-image: url(https://i.imgur.com/JCHrVWf.jpg);
+  background-size: cover;
+}
+
+.returning-user {
+  background-image: url(https://i.imgur.com/DuC0UTE.jpg);
+  background-size: cover;
+}
+
+.create-dish {
+  background-image: url(https://i.imgur.com/Q01f36g.jpg);
+  background-size: cover;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -340,13 +351,24 @@ select {
   margin: 0 auto;
 }
 
-
+h5 {
+  color: red;
+  margin: 0;
+  text-align: center;
+  font-size: 1.2em;
+}
 
 
 
 /* ======================== */
 /* INDEX PAGE [MEAL PLANS] */
 /* ====================== */
+
+
+.plans-body {
+  background-image: url(https://i.imgur.com/4PXtq84.jpg);
+  background-size: cover;
+}
 
 .plan-index-container {
   display: flex;
