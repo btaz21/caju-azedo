@@ -1,33 +1,31 @@
 <nav>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <% if (currentUser) {
         if (currentUser.color === 'red') {%>
           <div class="logo">
             <a href="/foods"><img src="https://i.imgur.com/QZt5TSB.png" alt="logo"></a>
-            <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
+            <h1><a href="/foods">Welcome to Caju, <%=currentUser.name%></a></h1>
           </div>
         <%}
         else if (currentUser.color === 'forest green') { %>
           <div class="logo">
             <a href="/foods"><img src="https://i.imgur.com/FCFvq1M.png" alt="logo"></a>
-            <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
+            <h1><a href="/foods">Welcome to Caju, <%=currentUser.name%></a></h1>
           </div>
         <% }
         else {%>
           <div class="logo">
             <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
-            <h1><a href="/foods">Welcome to Cajuzinho, <%=currentUser.name%></a></h1>
+            <h1><a href="/foods">Welcome to Caju, <%=currentUser.name%></a></h1>
           </div>
         <%}%>
     <%} else {%>
       <div class="logo">
         <img src="https://i.imgur.com/4FYvbih.png" alt="logo">
-        <h1><a href="/foods">Cajuzinho</a></h1>
+        <h1><a href="/foods">Caju</a></h1>
       </div>
       <%}%>
   <ul>
-    <li><a href="/mealplans/new">Create Meal Plans</a></li>
-    <li><a href="/foods/new">Add New Dish</a></li>
-    <li><a href="/mealplans">See Meal Plans</a></li>
     <%if (currentUser) {%>
         <li>
           <form action="/sessions?_method=DELETE" method="POST">
@@ -39,5 +37,13 @@
         <li><a href="/users/new">Sign Up</a></li>
         <li><a href="/sessions/new">Log In</a></li>
     <%}%>
+    <li class=dropdown><ion-icon id="menu" name="menu-outline"></ion-icon>
+      <ul class=dropdown-content>
+        <li><a href="#">About Caju</a></li>
+        <li><a href="/foods/new">Add New Dish</a></li>
+        <li><a href="/mealplans/new">Create a Meal Plan</a></li>
+        <li><a href="/mealplans">See Your Meal Plans</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>

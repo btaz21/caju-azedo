@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
 
 :root {
   --yellow: #d5b939;
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive;
   margin: 0;
   padding: 0;
   background-color: #161616;
@@ -21,7 +21,7 @@ body {
 
 .side-tab {
   position: fixed;
-  height: 210px;
+  height: 220px;
   width: 40px;
   top: 385px;
   left: 0px;
@@ -99,10 +99,45 @@ nav a:hover {
   color: var(--red);
 }
 
-/* #welcome {
-  margin: 0 20px;
-} */
+.dropdown {
+  position: relative;
+}
 
+#menu {
+  font-size: 46px;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  z-index: 1;
+  text-align: right;
+  width: 200px;
+  border: 1px solid black;
+  box-shadow: 5px 5px #4C4C4C;
+}
+
+.dropdown-content li {
+  background-color: var(--yellow);
+  color: black;
+  width: 100%;
+  display: inline-block;
+  opacity: 70%;
+}
+
+.dropdown-content a {
+  color: black;
+  width: 200px;
+  font-size: 1.2em;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
 
 /* ====== */
 /* INDEX */
@@ -299,7 +334,7 @@ input {
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid var(--yellow);
-  font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive;
 }
 
 input:focus {
@@ -311,7 +346,7 @@ input[type="submit"] {
   width: 100%;
   height: 50px;
   background: var(--yellow);
-  font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive;
   font-size: 16px;
   color: whitesmoke;
   /* border: 0px; */
@@ -331,7 +366,7 @@ textarea {
   resize: none;
   height: 200px;
   width: 100%;
-  font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive;
 }
 
 h1 {
@@ -343,7 +378,7 @@ select {
   padding: 10px;
   width: 100%;
   margin: 0 auto;
-  font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .all-info {
@@ -383,6 +418,7 @@ h5 {
   border-radius: 10px;
   border: 2px solid #ccc;
   margin-top: 40px;
+  opacity: 70%;
 }
 
 .plan-index-card-flex {
@@ -419,16 +455,19 @@ h3 {
   color: red;
   font-size: 20px;
   margin: 0;
+  text-decoration: underline;
 }
 
 .form-flex input {
   width: 50%;
   background: none;
   color: red;
-  font-family: 'Handlee', cursive;
+  font-family: 'Architects Daughter', cursive;
   font-size: 20px;
   margin: 0;
   align-self: center;
+  text-decoration: underline;
+  border: none;
 }
 
 .form-flex input:hover {
