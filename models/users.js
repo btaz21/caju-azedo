@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema(
     password: String,
     color: String,
     name: String,
-    addedFoods: [foods.schema],
+    addedFoods: [],
     addedPlans: [mealPlans.schema]
   },
   {timestamps:true}

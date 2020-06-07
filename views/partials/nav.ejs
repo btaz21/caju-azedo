@@ -7,9 +7,15 @@
             <h1><a href="/foods">Welcome to Caju, <%=currentUser.name%></a></h1>
           </div>
         <%}
-        else if (currentUser.color === 'forest green') { %>
+        else if (currentUser.color === 'yellow') { %>
           <div class="logo">
             <a href="/foods"><img src="https://i.imgur.com/FCFvq1M.png" alt="logo"></a>
+            <h1><a href="/foods">Welcome to Caju, <%=currentUser.name%></a></h1>
+          </div>
+        <% }
+        else if (currentUser.color === 'orange') { %>
+          <div class="logo">
+            <a href="/foods"><img src="https://i.imgur.com/ApIaTFJ.png" alt="logo"></a>
             <h1><a href="/foods">Welcome to Caju, <%=currentUser.name%></a></h1>
           </div>
         <% }

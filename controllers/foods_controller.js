@@ -22,19 +22,32 @@ const isAuthenticated = (req, res, next) => {
 router.get('/new', isAuthenticated, (req, res) => {
   res.render('food/new.ejs',
     {
-      currentUser: req.session.currentUser
+      currentUser:req.session.currentUser
     }
   )
 })
 
 
 // CREATE
-router.post('/', (req, res) => {
+router.post('/', isAuthenticated, (req, res) => {
   Food.create(req.body, (error, createdFood) => {
     console.log(createdFood);
     res.redirect('/foods')
   })
 })
+
+
+
+// const userID = req.session.currentUser._id
+// User.findById(userID, (error, foundUser) => {
+//   foundUser.addedFoods.push(req.body)
+//   foundUser.save((error, data) => {
+//     res.redirect('/foods')
+//     console.log(foundUser);
+//   })
+// })
+
+
 
 // INDEX
 router.get('/', (req, res) => {
@@ -48,6 +61,16 @@ router.get('/', (req, res) => {
     )
   })
 })
+
+// User.findById(req.session.currentUser._id, (error, foundUser) => {
+//   res.render(
+//     'food/index.ejs',
+//     {
+//       user:foundUser,
+//       currentUser: req.session.currentUser
+//     }
+//   )
+// })
 
 // SHOW
 router.get('/:id', isAuthenticated, (req, res) => {
@@ -94,7 +117,7 @@ router.delete('/:id', isAuthenticated, (req, res) => {
 // SEED
 router.get('/seed/starterdata', isAuthenticated, (req, res) => {
   Food.create(seed, (error, data) => {
-      res.redirect('/')
+    res.redirect('/')
     }
   )
 })
