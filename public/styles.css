@@ -38,6 +38,27 @@ body {
   border-radius: 10px;
 }
 
+/* ===== */
+/* ABOUT */
+/* ===== */
+
+.about-container {
+  color: white;
+  margin: 25px;
+}
+
+.about-images img {
+  width: 400px;
+
+}
+
+.about-images {
+  text-align: center;
+}
+
+
+
+
 /* ======= */
 /* NAVBAR */
 /* ===== */
@@ -153,7 +174,7 @@ nav a:hover {
   position: absolute;
   margin: 0;
   padding: 0;
-  top: 40%;
+  top: 35%;
   text-align: center;
   width: 100%;
   text-decoration: none;
@@ -174,6 +195,7 @@ nav a:hover {
 
 .index-cards {
   width: 330px;
+  height: 220px;
   margin-bottom: 40px;
   position: relative;
   transition-property: font-size;
@@ -190,15 +212,12 @@ nav a:hover {
   width: 100%;
   height: 200px;
   border-radius: 5px;
-  border: 2px solid var(--yellow);
-  /* box-shadow: 6px 6px #112121; */
+  /* border: 2px solid var(--yellow); */
+  /* box-shadow: 3px 3px var(--yellow); */
   /* transition: .5s ease-in; */
 }
 
 
-/* .index-img:hover {
-  opacity: 0%;
-} */
 
 /* ================= */
 /* SHOW PAGE - FOODS */
@@ -306,6 +325,16 @@ nav a:hover {
 
 .food-edit-body {
   background-image: url(https://i.imgur.com/IJuwr1d.jpg);
+  background-size: cover;
+}
+
+.body-edit-plan {
+  background-image: url(https://i.imgur.com/gdqWq1g.jpg);
+  background-size: cover;
+}
+
+.body-create-plan {
+  background-image: url(https://i.imgur.com/EcHDl3K.jpg);
   background-size: cover;
 }
 

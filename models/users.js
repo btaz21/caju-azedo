@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const mealPlans = require('./mealplans.js')
+const foods = require('./foods.js')
 
 const userSchema = new mongoose.Schema(
   {
@@ -7,6 +8,8 @@ const userSchema = new mongoose.Schema(
     password: String,
     color: String,
     name: String,
+    addedFoods: [foods.schema],
+    addedPlans: [mealPlans.schema]
   },
   {timestamps:true}
 )

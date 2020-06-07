@@ -49,29 +49,25 @@ router.get('/', isAuthenticated, (req, res) => {
 
 
 // EDIT
-router.get('/edit', (req, res) => {
+router.get('/:id/edit', (req, res) => {
   MealPlan.findById(req.params.id, (error, foundPlan) => {
-    res.render(
-      'mealplans/edit.ejs',
-      {
-        plan:foundPlan,
-        currentUser: req.session.currentUser
-      }
-    )
+    Food.find({}, (error, foundFoods) => {
+      res.render(
+        'mealplans/edit.ejs',
+        {
+          plan:foundPlan,
+          foods:foundFoods,
+          currentUser: req.session.currentUser
+        }
+      )
+    })
   })
 })
 
 
-// UPDATE
-router.put('/edit', (req, res) => {
-  MealPlan.findByIdAndUpdate(req.body.id, req.body, (error, updatedPlan) => {
-    res.redirect('/mealplans')
-  })
-})
-
 
 // UPDATE
-router.put('/note/edit', (req, res) => {
+router.put('/note/quick/edit', (req, res) => {
   console.log(req.body.notes);
   MealPlan.findById(req.body.id, (error, foundPlan) => {
     foundPlan.notes.push(req.body.notes)
@@ -82,6 +78,14 @@ router.put('/note/edit', (req, res) => {
     })
   })
 })
+
+// UPDATE
+router.put('/:id', (req, res) => {
+  MealPlan.findByIdAndUpdate(req.params.id, req.body, (error, updatedPlan) => {
+    res.redirect('/mealplans')
+  })
+})
+
 
 // DELETE
 router.delete('/', (req, res) => {

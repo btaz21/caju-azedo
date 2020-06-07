@@ -3,9 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/../styles.css">
   </head>
-  <body>
-    <h1>Meal Plan Edit Page</h1>
+  <body class="body-edit-plan">
+    <%- include ('../partials/nav.ejs') %>
+    <div class="container">
+      <div class="add-dish">
+        <h1>Edit Your Plan</h1>
+        <form class="new-form" action="/mealplans/<%=plan.id%>?_method=PUT" method="POST">
+          <fieldset class="all-info">
+            <legend>Details of the Plan</legend>
+            <!-- breakfast -->
+            <label for="breakfast">Name</label>
+            <select id="breakfast" name="breakfast">
+              <% for(let i = 0; i < foods.length; i++) { %>
+                  <option><%=foods[i].name%></option>
+              <% } %>
+            </select>
+            <!-- lunch-->
+            <label for="lunch">Lunch</label>
+            <select id="lunch" name="lunch">
+              <% for(let i = 0; i < foods.length; i++) { %>
+                  <option><%=foods[i].name%></option>
+              <% } %>
+            </select>
+            <!-- dinner -->
+            <label for="dinner">Dinner</label>
+            <select id="dinner" name="dinner">
+              <% for(let i = 0; i < foods.length; i++) { %>
+                  <option><%=foods[i].name%></option>
+              <% } %>
+            </select>
+            <!-- notes -->
+            <label for="notes">Notes</label>
+            <textarea name="notes"></textarea>
+            <!-- submit form -->
+            <input type="submit" value="SUBMIT CHANGES">
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

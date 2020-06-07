@@ -2,7 +2,11 @@ const express = require('express')
 const router = express.Router()
 const Food = require('../models/foods.js')
 const MealPlan = require('../models/mealplans.js')
+const User = require('../models/users.js')
 const seed = require('../models/seed.js')
+
+
+// AUTHENTICATION FUNCTION
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
     return next()
@@ -12,13 +16,15 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
+
+
 // NEW
 router.get('/new', isAuthenticated, (req, res) => {
   res.render('food/new.ejs',
-  {
-    currentUser: req.session.currentUser
-  }
-)
+    {
+      currentUser: req.session.currentUser
+    }
+  )
 })
 
 
@@ -44,7 +50,7 @@ router.get('/', (req, res) => {
 })
 
 // SHOW
-router.get('/:id', (req, res) => {
+router.get('/:id', isAuthenticated, (req, res) => {
   Food.findById(req.params.id, (error, foundFood) => {
     res.render(
       'food/show.ejs',
@@ -93,14 +99,15 @@ router.get('/seed/starterdata', isAuthenticated, (req, res) => {
   )
 })
 
-
-
-
-
-
-
-
-
+// ABOUT
+router.get('/about/caju', (req, res) => {
+  res.render(
+    'food/about.ejs',
+     {
+       currentUser:req.session.currentUser
+     }
+   )
+})
 
 
 

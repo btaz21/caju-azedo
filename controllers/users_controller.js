@@ -5,8 +5,6 @@ const router = express.Router()
 const User = require('../models/users.js')
 
 router.get('/new', (req, res) => {
-  // req.flash('info', 'flash message added')
-  console.log(req.session.currentUser);
   res.render(
     'users/new.ejs',
     {
@@ -25,13 +23,13 @@ router.post('/', (req, res) => {
       req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
       User.create(req.body, (error, createdUser) => {
         console.log('user is created', createdUser);
-        res.redirect('/')
+        res.redirect('/sessions/new')
       })
     }
   })
 })
 
-// DROP DATABASE
+// DROP DATABASE !!!!!!!!!!!
 // DO NOT PUSH TO PRODUCTION
 router.get('/dropallusers/cannotundo/areyousure/reallysure/okthen', (req, res) => {
     User.collection.drop()
