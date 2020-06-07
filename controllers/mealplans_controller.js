@@ -15,31 +15,36 @@ const isAuthenticated = (req, res, next) => {
 
 // NEW
 router.get('/new', isAuthenticated, (req, res) => {
-  Food.find({}, (error, allFoods) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'mealplans/new.ejs',
       {
-        foods:allFoods,
-        currentUser: req.session.currentUser
+        currentUser: req.session.currentUser,
+        foods: foundUser.addedFoods
       }
     )
   })
 })
 
+
+
 // CREATE
 router.post('/', (req, res) => {
-  MealPlan.create(req.body, (error, createdPlan) => {
+  User.findByIdAndUpdate(req.session.currentUser._id, { $push: {addedPlans:req.body} }, {new:true}, (error, foundUser) => {
     res.redirect('/mealplans')
   })
 })
 
+
+
+
 // INDEX
 router.get('/', isAuthenticated, (req, res) => {
-  MealPlan.find({}, (error, allPlans) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'mealplans/index.ejs',
       {
-        plans:allPlans,
+        plans:foundUser.addedPlans,
         currentUser: req.session.currentUser
       }
     )
@@ -49,38 +54,35 @@ router.get('/', isAuthenticated, (req, res) => {
 
 
 // EDIT
-router.get('/:id/edit', (req, res) => {
-  MealPlan.findById(req.params.id, (error, foundPlan) => {
-    Food.find({}, (error, foundFoods) => {
-      res.render(
-        'mealplans/edit.ejs',
-        {
-          plan:foundPlan,
-          foods:foundFoods,
-          currentUser: req.session.currentUser
-        }
-      )
-    })
+router.get('/:id/:index/edit', isAuthenticated, (req, res) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    console.log(foundUser.addedPlans[req.params.index]);
+    res.render(
+      'mealplans/edit.ejs',
+      {
+        plan:foundUser.addedPlans[req.params.index],
+        foods:foundUser.addedFoods,
+        currentUser: req.session.currentUser
+      }
+    )
   })
 })
 
 
-
 // UPDATE
-router.put('/note/quick/edit', (req, res) => {
-  console.log(req.body.notes);
-  MealPlan.findById(req.body.id, (error, foundPlan) => {
-    foundPlan.notes.push(req.body.notes)
-    foundPlan.save((error, data) => {
+router.put('/note/quick/:index/edit', isAuthenticated, (req, res) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    foundUser.addedPlans[req.params.index].notes.push(req.body.notes)
+    foundUser.save((error, data) => {
       res.redirect('/mealplans')
-      console.log(foundPlan);
-      console.log(error);
     })
   })
 })
 
+
+
 // UPDATE
-router.put('/:id', (req, res) => {
+router.put('/:id', isAuthenticated, (req, res) => {
   MealPlan.findByIdAndUpdate(req.params.id, req.body, (error, updatedPlan) => {
     res.redirect('/mealplans')
   })
@@ -88,11 +90,20 @@ router.put('/:id', (req, res) => {
 
 
 // DELETE
-router.delete('/', (req, res) => {
-  MealPlan.findByIdAndRemove(req.body.id, (error, deletedPlan) => {
+router.delete('/:planId', isAuthenticated, (req, res) => {
+  User.findByIdAndUpdate(req.session.currentUser._id, { $pull: { addedPlans: { _id: req.params.planId}}}, {new: true}, (error, foundUser) => {
+    console.log(error);
+    console.log(foundUser);
     res.redirect('/mealplans')
   })
 })
+
+
+
+//   MealPlan.findByIdAndRemove(req.body.id, (error, deletedPlan) => {
+//     res.redirect('/mealplans')
+//   })
+// })
 
 
 // DROP DATABASE
