@@ -105,13 +105,6 @@ router.delete('/:planId', isAuthenticated, (req, res) => {
 
 
 
-// DROP DATABASE
-// DO NOT PUSH TO PRODUCTION
-router.get('/dropdatabase/cannotundo/areyousure/reallysure/okthen', isAuthenticated, (req, res) => {
-    MealPlan.collection.drop()
-    res.send('You did it! You dropped the database!')
-  }
-)
 
 
 
