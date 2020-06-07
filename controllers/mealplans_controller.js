@@ -30,7 +30,8 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
-  User.findByIdAndUpdate(req.session.currentUser._id, { $push: {addedPlans:req.body} }, {new:true}, (error, foundUser) => {
+  User.findByIdAndUpdate(req.session.currentUser._id, { $push: {addedPlans:req.body} }, {new:true}, (error, updatedUser) => {
+    console.log(updatedUser);
     res.redirect('/mealplans')
   })
 })
@@ -62,6 +63,7 @@ router.get('/:id/:index/edit', isAuthenticated, (req, res) => {
       {
         plan:foundUser.addedPlans[req.params.index],
         foods:foundUser.addedFoods,
+        index: req.params.index,
         currentUser: req.session.currentUser
       }
     )
@@ -82,9 +84,12 @@ router.put('/note/quick/:index/edit', isAuthenticated, (req, res) => {
 
 
 // UPDATE
-router.put('/:id', isAuthenticated, (req, res) => {
-  MealPlan.findByIdAndUpdate(req.params.id, req.body, (error, updatedPlan) => {
-    res.redirect('/mealplans')
+router.put('/:id/:index', isAuthenticated, (req, res) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    foundUser.addedPlans[req.params.index] = req.body
+    foundUser.save((error, data) => {
+      res.redirect('/mealplans')
+    })
   })
 })
 
@@ -100,22 +105,13 @@ router.delete('/:planId', isAuthenticated, (req, res) => {
 
 
 
-//   MealPlan.findByIdAndRemove(req.body.id, (error, deletedPlan) => {
-//     res.redirect('/mealplans')
-//   })
-// })
-
-
 // DROP DATABASE
 // DO NOT PUSH TO PRODUCTION
-router.get('/dropdatabase/cannotundo/areyousure/reallysure/okthen', (req, res) => {
+router.get('/dropdatabase/cannotundo/areyousure/reallysure/okthen', isAuthenticated, (req, res) => {
     MealPlan.collection.drop()
     res.send('You did it! You dropped the database!')
   }
 )
-
-
-
 
 
 

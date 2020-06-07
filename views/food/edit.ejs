@@ -10,7 +10,7 @@
     <div class="container">
       <div class="add-dish">
         <h1>Edit Your Dish</h1>
-        <form class="new-form" action="/foods/<%=user.id%>/<%=food.id%>?_method=PUT" method="POST">
+        <form class="new-form" action="/foods/<%=user.id%>/<%=food.id%>/<%=index%>?_method=PUT" method="POST">
           <fieldset class="all-info">
             <legend>Details of the Dish</legend>
             <!-- name of dish -->
@@ -29,6 +29,7 @@
             <label for="recipe">Recipe</label>
             <input id="recipe" type="text" name="recipe" value="<%= food.recipe %>">
             <!-- submit form -->
+            <input type="hidden" name="index" value="<%=index%>">
             <input type="submit" value="SUBMIT CHANGES">
           </fieldset>
         </form>

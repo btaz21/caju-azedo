@@ -16,7 +16,7 @@
                 let month = date.getMonth()
                 let year = date.getFullYear()
                 let fullDate = (`${month}/${day}/${year}`) %>
-                <h1><a href="/mealplans/<%=plans[i].id%>/<%=i%>/edit"><%= fullDate %></a></h1>
+                <h1><%= fullDate %></h1>
               </div>
               <form class='form-flex' action="/mealplans/<%=plans[i].id%>?_method=DELETE" method="post">
                 <a href="/mealplans/<%=plans[i].id%>/<%=i%>/edit">Edit</a>

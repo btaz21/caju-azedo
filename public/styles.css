@@ -45,27 +45,32 @@ body {
 
 .about-container {
   color: white;
-  margin: 25px;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .about-images img {
   width: 100%;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 10px;
 }
 
 .about-images {
-  width: 33%;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.about-text {
+  width: 400px;
+  margin: 0 auto;
 }
 
 .about-container p {
-  width: 33%;
-  background-color: whitesmoke;
-  color: black;
-  margin: 0;
-  border-radius: 10px 0px 0px 10px;
-  padding: 20px;
+  text-align: center;
+}
+
+.about-container h1 {
+  color: var(--yellow);
 }
 
 
@@ -485,8 +490,7 @@ h3 {
   margin: 0;
 }
 
-.date a {
-  text-decoration: none;
+.date h1 {
   color: black;
 }
 

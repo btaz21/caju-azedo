@@ -86,14 +86,16 @@ router.get('/:userId/:id/:altid/edit', isAuthenticated, (req, res) => {
 
 
 // UPDATE
-router.put('/:userId/:id/', (req, res) => {
-  console.log(req.body);
-  User.findByIdAndUpdate(req.params.userId, { addedFoods: req.body }, { new:true }, (error, updatedUser) => {
-    console.log(updatedUser);
-    console.log(error);
-    res.redirect('/foods')
+router.put('/:userId/:id/:altId', (req, res) => {
+  User.findById(req.params.userId, (error, foundUser) => {
+    foundUser.addedFoods[req.params.altId] = req.body
+    console.log(foundUser);
+    foundUser.save((error, data) => {
+      res.redirect('/foods')
+    })
   })
 })
+
 
 
 // DELETE
@@ -113,11 +115,6 @@ router.get('/seed/starterdata/fill/maybe/yes', isAuthenticated, (req, res) => {
     console.log(updatedUser);
       res.redirect('/')
   })
-  // Food.create(seed, (error, data) => {
-  //   console.log(error);
-  //   }
-  // )
-
 })
 
 
