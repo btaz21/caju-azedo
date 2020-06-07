@@ -10,7 +10,7 @@
     <div class="container">
       <div class="add-dish">
         <h1>Edit Your Dish</h1>
-        <form class="new-form" action="/foods/<%=food.id%>?_method=PUT" method="POST">
+        <form class="new-form" action="/foods/<%=user.id%>/<%=food.id%>?_method=PUT" method="POST">
           <fieldset class="all-info">
             <legend>Details of the Dish</legend>
             <!-- name of dish -->

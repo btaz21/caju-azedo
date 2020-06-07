@@ -103,7 +103,9 @@ router.get('/:userId/:id/:altid/edit', isAuthenticated, (req, res) => {
       'food/edit.ejs',
       {
         food:foundUser.addedFoods[req.params.altid],
-        currentUser: req.session.currentUser
+        currentUser: req.session.currentUser,
+        user:foundUser,
+        index:req.params.altid
       }
     )
   })
@@ -122,11 +124,19 @@ router.get('/:userId/:id/:altid/edit', isAuthenticated, (req, res) => {
 
 
 // UPDATE
-router.put('/:id', (req, res) => {
-  Food.findByIdAndUpdate(req.params.id, req.body, (error, updatedFood) => {
+router.put('/:userId/:id/', (req, res) => {
+  console.log(req.body);
+  User.findByIdAndUpdate(req.params.userId, { addedFoods: req.body }, { new:true }, (error, updatedUser) => {
+    console.log(updatedUser);
+    console.log(error);
     res.redirect('/foods')
   })
 })
+
+//   Food.findByIdAndUpdate(req.params.id, req.body, (error, updatedFood) => {
+//     res.redirect('/foods')
+//   })
+// })
 
 
 // DELETE
