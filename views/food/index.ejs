@@ -11,10 +11,10 @@
       <a href="/foods/seed/starterdata">Generate Brazilian Dishes!</a>
     </div>
     <div class="index-container">
-      <% for (let i = 0; i < foods.length; i++) { %>
+      <% for (let i = 0; i < user.addedFoods.length; i++) { %>
           <div class="index-cards">
-            <a class = "index-name" href="/foods/<%= foods[i].id %>"><%= foods[i].name %></a>
-            <a href="/foods/<%= foods[i].id %>"><img class="index-img" src="<%= foods[i].img %>" alt="<%=foods[i].name%>"></a>
+            <a class = "index-name" href="/foods/<%=user.id%>/<%=i%>"><%= user.addedFoods[i].name %></a>
+            <a href="/foods/<%=user.id%>/<%=i%>"><img class="index-img" src="<%= user.addedFoods[i].img %>" alt="<%=user.addedFoods[i].name%>"></a>
           </div>
       <% } %>
     </div>

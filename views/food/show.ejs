@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/../styles.css">
   </head>
   <body>
     <%- include ('../partials/nav.ejs') %>
@@ -12,9 +12,9 @@
         <h1><%= food.name %></h1>
         <div class="double-trouble">
           <div class="a-tags">
-            <a href="/foods/<%=food.id%>/edit">Edit Dish</a>
+            <a href="/foods/<%=user.id%>/<%=food.id%>/<%=index%>/edit">Edit Dish</a>
           </div>
-          <form class="show-delete" action="/foods/<%=food.id%>?_method=DELETE" method="post">
+          <form class="show-delete" action="/foods/<%=user.id%>/<%=food.id%>/<%=index%>?_method=DELETE" method="post">
             <input type="submit" value="Delete">
           </form>
         </div>

@@ -17,7 +17,6 @@ const isAuthenticated = (req, res, next) => {
 }
 
 
-
 // NEW
 router.get('/new', isAuthenticated, (req, res) => {
   res.render('food/new.ejs',
@@ -30,73 +29,97 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 // CREATE
 router.post('/', isAuthenticated, (req, res) => {
-  Food.create(req.body, (error, createdFood) => {
-    console.log(createdFood);
+  User.findByIdAndUpdate(req.session.currentUser._id, {addedFoods:req.body}, {new:true}, (error, updatedUser) => {
+    console.log(updatedUser);
     res.redirect('/foods')
   })
 })
 
-
-
-// const userID = req.session.currentUser._id
-// User.findById(userID, (error, foundUser) => {
-//   foundUser.addedFoods.push(req.body)
-//   foundUser.save((error, data) => {
-//     res.redirect('/foods')
-//     console.log(foundUser);
-//   })
-// })
+  // Food.create(req.body, (error, createdFood) => {
+  //   console.log(createdFood);
+  //   res.redirect('/foods')
+  // })
 
 
 
 // INDEX
-router.get('/', (req, res) => {
-  Food.find({}, (error, allFoods) => {
+router.get('/', isAuthenticated, (req, res) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'food/index.ejs',
       {
-        foods:allFoods,
+        user:foundUser,
         currentUser: req.session.currentUser
       }
     )
   })
 })
 
-// User.findById(req.session.currentUser._id, (error, foundUser) => {
-//   res.render(
-//     'food/index.ejs',
-//     {
-//       user:foundUser,
-//       currentUser: req.session.currentUser
-//     }
-//   )
-// })
+  // Food.find({}, (error, allFoods) => {
+  //   res.render(
+  //     'food/index.ejs',
+  //     {
+  //       foods:allFoods,
+  //       currentUser: req.session.currentUser
+  //     }
+  //   )
+  // })
+
+
 
 // SHOW
-router.get('/:id', isAuthenticated, (req, res) => {
-  Food.findById(req.params.id, (error, foundFood) => {
+router.get('/:id/:altid', isAuthenticated, (req, res) => {
+  console.log(req.params.id);
+  console.log(req.params.altid);
+  User.findById(req.params.id, (error, foundUser) => {
+    console.log(foundUser);
     res.render(
       'food/show.ejs',
       {
-        food:foundFood,
+        food:foundUser.addedFoods[req.params.altid],
+        currentUser:req.session.currentUser,
+        index:req.params.altid,
+        user:foundUser
+      }
+    )
+  })
+
+  // Food.findById(req.params.id, (error, foundFood) => {
+  //   res.render(
+  //     'food/show.ejs',
+  //     {
+  //       food:foundFood,
+  //       currentUser: req.session.currentUser
+  //     }
+  //   )
+  // })
+})
+
+
+// EDIT
+router.get('/:userId/:id/:altid/edit', isAuthenticated, (req, res) => {
+  User.findById(req.params.userId, (error, foundUser) => {
+    res.render(
+      'food/edit.ejs',
+      {
+        food:foundUser.addedFoods[req.params.altid],
         currentUser: req.session.currentUser
       }
     )
   })
 })
 
-// EDIT
-router.get('/:id/edit', isAuthenticated, (req, res) => {
-  Food.findById(req.params.id, (error, foundFood) => {
-    res.render(
-      'food/edit.ejs',
-      {
-        food:foundFood,
-        currentUser: req.session.currentUser
-      }
-    )
-  })
-})
+
+  // Food.findById(req.params.id, (error, foundFood) => {
+  //   res.render(
+  //     'food/edit.ejs',
+  //     {
+  //       food:foundFood,
+  //       currentUser: req.session.currentUser
+  //     }
+  //   )
+  // })
+
 
 // UPDATE
 router.put('/:id', (req, res) => {
@@ -104,6 +127,7 @@ router.put('/:id', (req, res) => {
     res.redirect('/foods')
   })
 })
+
 
 // DELETE
 router.delete('/:id', isAuthenticated, (req, res) => {
@@ -121,6 +145,7 @@ router.get('/seed/starterdata', isAuthenticated, (req, res) => {
     }
   )
 })
+
 
 // ABOUT
 router.get('/about/caju', (req, res) => {
