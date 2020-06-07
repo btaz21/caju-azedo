@@ -122,7 +122,7 @@ router.get('/seed/starterdata/fill/maybe/yes', isAuthenticated, (req, res) => {
 
 
 // ABOUT
-router.get('/about/caju', (req, res) => {
+router.get('/about/caju/app', (req, res) => {
   res.render(
     'food/about.ejs',
      {

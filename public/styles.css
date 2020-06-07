@@ -45,16 +45,28 @@ body {
 .about-container {
   color: white;
   margin: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 .about-images img {
-  width: 400px;
-
+  width: 100%;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .about-images {
-  text-align: center;
+  width: 33%;
 }
+
+.about-container p {
+  width: 33%;
+  background-color: whitesmoke;
+  color: black;
+  margin: 0;
+  border-radius: 10px 0px 0px 10px;
+  padding: 20px;
+}
+
 
 
 
