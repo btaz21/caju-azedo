@@ -19,6 +19,20 @@ const seed = [
     etymology: "",
     img: "https://i.imgur.com/uhiSp8q.jpg",
     recipe: "https://i.imgur.com/mIMpTxh.png"
+  },
+  {
+    name: "Quindim",
+    description: "Quindim is a popular Brazilian baked dessert, made chiefly from sugar, egg yolks and ground coconut. It is a custard and usually presented as an upturned cup with a glistening surface and intensely yellow color. The mixture can also be made in a large ring mold (like a Savarin mold) in which case it is called a 'quindão' and served in slices.The heavy use of egg yolks is characteristic of many Portuguese sweets and pastries, such as the papo de anjo ('angel's double chin') and fios de ovos ('egg threads'). Their combination with coconut and sugar was probably created by African slaves in 17th century Brazilian Northeast, where coconuts were abundant and sugar (from sugarcane) was a major industry",
+    etymology: "",
+    img: "https://i.imgur.com/vYwSr7i.jpg",
+    recipe: "https://www.allrecipes.com/recipe/190357/quindim/"
+  },
+  {
+    name: "Açai na Tigela",
+    description: "A Brazilian specialty from Pará and Amazonas. It is a dish made with the frozen and mashed fruit of the açaí palm. It is served as a smoothie in a bowl or glass, and is commonly topped with granola and banana, and then mixed with other fruits and guaraná syrup. Açaí na tigela is popular all over Brazil, but mainly in Pará, Rio de Janeiro, Florianópolis, São Paulo, Goiás and along the northeastern coast, where it is sold in kiosks lining the beach promenade and in juice bars throughout the cities. Preparation differs from region to region. Tapioca pearls are a common topping in northern Brazil. The original recipe, as eaten in the North, contains shrimp or dried fish and tapioca and is usually salty. The sweet variety, which contains granola, banana and other fruits, as well as sugar, is more common in southern parts of the country.",
+    etymology: "Mid 19th century: from Portuguese açaí, from Tupi-Guarani asaí",
+    img: "https://i.imgur.com/pf0FkNZ.jpg",
+    recipe: "https://www.tudogostoso.com.br/receita/58910-acai-na-tigela.html"
   }
 ]
 
