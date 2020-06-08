@@ -626,15 +626,15 @@ h4 {
 @media (max-width: 1125px) {
 
   * {
-    /* border: 1px solid gold; */
+    border: 1px solid gold;
   }
 
   h2 {
     font-size: 7em;
   }
 
-  .login {
-    color: black;
+  #menu {
+    font-size: 81px;
   }
 
   .returning-user {
@@ -662,17 +662,16 @@ h4 {
     font-size: 6em;
   }
 
-  .about-text {
+  .about-container {
     width: 90%;
+  }
+
+  .about-text {
     font-size: 2.5em;
   }
 
   .about-images {
     width: 90%;
-  }
-
-  .new-form {
-    width: 100%;
   }
 
 
@@ -682,12 +681,14 @@ h4 {
   }
 
   .container-v2 {
-    margin-top: 70px
+    margin-top: 70px;
+    width: 90%;
   }
 
-  .all-info {
-    width: 85%;
+  .new-form {
+    width: 100%;
   }
+
 
   legend {
     font-size: 2em;
@@ -711,9 +712,8 @@ h4 {
   }
 
   input[type=submit] {
-    font-size: 3em;
+    /* font-size: 3em; */
     height: 130px;
-    margin-top: 150px;
   }
 
   select {
@@ -721,13 +721,6 @@ h4 {
     height: 100px;
   }
 
-  /* .logo a {
-    font-size: 3em;
-  }
-
-  .logo img {
-    width: 40%;
-  } */
 
   .display {
     width: 45%;
