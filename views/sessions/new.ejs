@@ -7,10 +7,10 @@
   </head>
   <body class="returning-user">
     <%- include ('../partials/nav.ejs') %>
-    <h1>Log-in</h1>
+    <h2>Log-in</h2>
     <div class="container">
       <form action="/sessions" method="POST">
-        <label for="name">User Name</label>
+        <label for="name">Username:</label>
         <h5><%=messages.userAlert%></h5>
         <input type="text" name="username" required>
         <label for="color">Password:</label>
