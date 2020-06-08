@@ -7,32 +7,30 @@
   </head>
   <body class='create-dish'>
     <%- include ('../partials/nav.ejs') %>
-    <div class="container">
-      <div class="add-dish">
-        <h1>Create New Dish</h1>
-        <form class="new-form" action="/foods" method="POST">
-          <fieldset class="all-info">
-            <legend>Details of the Dish</legend>
-            <!-- name of dish -->
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name">
-            <!-- description -->
-            <label for="description">Description</label>
-            <textarea id="description" name="description"></textarea>
-            <!-- etymology -->
-            <label for="etymology">Etymology of Name</label>
-            <input id="etymology" type="text" name="etymology">
-            <!-- image link -->
-            <label for="img">Image Link</label>
-            <input id="img" type="text" name="img">
-            <!-- recipe link -->
-            <label for="recipe">Recipe</label>
-            <input id="recipe" type="text" name="recipe">
-            <!-- submit form -->
-            <input type="submit" value="CREATE NEW FOOD">
-          </fieldset>
-        </form>
-      </div>
+    <h1>Create New Dish</h1>
+    <div class="container-v2">
+      <form class="new-form" action="/foods" method="POST">
+        <fieldset class="all-info">
+          <legend>Details of the Dish</legend>
+          <!-- name of dish -->
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name">
+          <!-- description -->
+          <label for="description">Description</label>
+          <textarea id="description" name="description"></textarea>
+          <!-- etymology -->
+          <label for="etymology">Etymology of Name</label>
+          <input id="etymology" type="text" name="etymology">
+          <!-- image link -->
+          <label for="img">Image Link</label>
+          <input id="img" type="text" name="img">
+          <!-- recipe link -->
+          <label for="recipe">Recipe</label>
+          <input id="recipe" type="text" name="recipe">
+          <!-- submit form -->
+          <input type="submit" value="CREATE NEW FOOD">
+        </fieldset>
+      </form>
     </div>
   </body>
 </html>

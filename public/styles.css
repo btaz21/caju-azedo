@@ -4,7 +4,7 @@
 :root {
   --yellow: #d5b939;
   --green: #01391d;
-  --red: #dc6a2b;
+  --red: #e38b41;
   --darkgreen: #1c492c;
 }
 
@@ -17,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #161616;
-  /* background-color: #ffffed; */
   position: relative;
 }
 
@@ -40,6 +39,12 @@ body {
   border-radius: 10px;
 }
 
+h2 {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+
 /* ===== */
 /* ABOUT */
 /* ===== */
@@ -47,6 +52,7 @@ body {
 .about-container {
   color: white;
   margin: 0 auto;
+  width: 800px;
   /* display: flex;
   justify-content: center; */
 }
@@ -57,17 +63,19 @@ body {
 }
 
 .about-images {
-  width: 400px;
   margin: 0 auto;
+  width: 80%;
 }
 
 .about-text {
-  width: 400px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .about-container p {
   text-align: center;
+  margin: 30px auto;
+  font-size: 1.5em;
 }
 
 .about-container h1 {
@@ -359,16 +367,22 @@ nav a:hover {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   color: whitesmoke;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  width: 400px;
+  margin: 20px auto;
 }
 
-.new-form {
-  width: 700px;
+.container-v2 {
+  color: whitesmoke;
+  width: 900px;
+  margin: 20px auto;
 }
+
+/* .new-form {
+  width: 700px;
+} */
 
 fieldset {
   border: 1px solid #ccc;
@@ -383,6 +397,7 @@ legend {
 
 label {
   display: block;
+  font-size: 1.5em;
   text-align: center;
   margin: 10px 0;
 }
@@ -391,6 +406,7 @@ input {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
+  font-size: 1.5em;
   box-sizing: border-box;
   border: 2px solid var(--yellow);
   font-family: 'Architects Daughter', cursive;
@@ -398,20 +414,19 @@ input {
 
 input:focus {
   outline: 0;
-  border: 2px solid yellow;
+  border: 2px solid var(--red);
 }
 
 input[type="submit"] {
   width: 100%;
-  height: 50px;
+  height: 70px;
   background: var(--yellow);
   font-family: 'Architects Daughter', cursive;
-  font-size: 16px;
+  font-size: 1.5em;
   color: whitesmoke;
-  /* border: 0px; */
   border-radius: 5px;
   transition: 0.2s ease-in-out;
-  margin: 35px auto;
+  margin: 50px auto;
 }
 
 input[type="submit"]:hover {
@@ -419,24 +434,31 @@ input[type="submit"]:hover {
   background: var(--red);
 }
 
-/* input[type="submit-v2"] */
 
 textarea {
   resize: none;
   height: 200px;
   width: 100%;
   font-family: 'Architects Daughter', cursive;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline: 0;
+  border: 2px solid var(--red);
 }
 
 h1 {
   text-align: center;
   color: white;
+  font-size: 2em;
 }
 
 select {
   padding: 10px;
   width: 100%;
   margin: 0 auto;
+  font-size: 1.5em;
   font-family: 'Architects Daughter', cursive;
 }
 
@@ -452,6 +474,13 @@ h5 {
   font-size: 1.2em;
 }
 
+h4 {
+  text-align: center;
+}
+
+#create-account {
+  color: var(--red);
+}
 
 
 /* ======================== */
@@ -468,10 +497,11 @@ h5 {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: 25px auto;
 }
 
 .plan-index-card {
-  width: 350px;
+  width: 500px;
   text-align: center;
   background: whitesmoke;
   border-radius: 10px;
@@ -486,10 +516,15 @@ h5 {
 }
 
 
-h3 {
+.horarios h3 {
   text-align: center;
+  font-size: 1.7em;
   color: var(--yellow);
   margin: 0;
+}
+
+.horarios h4 {
+  font-size: 1.5em;
 }
 
 .date h1 {
@@ -591,6 +626,14 @@ h3 {
     /* border: 1px solid gold; */
   }
 
+  h2 {
+    font-size: 7em;
+  }
+
+  .returning-user {
+    background-position: center;
+  }
+
   .index-cards {
     width: 85%;
     height: auto;
@@ -621,12 +664,10 @@ h3 {
     width: 100%;
   }
 
-  .add-dish {
-    width: 100%;
-  }
 
   .container {
-    margin: 0;
+    margin: 0 auto;
+    width: 85%
   }
 
   .all-info {
@@ -638,7 +679,7 @@ h3 {
   }
 
   input {
-    font-size: 3em;
+    font-size: 4em;
   }
 
   label {
@@ -652,7 +693,20 @@ h3 {
 
   input[type=submit] {
     font-size: 3em;
-    height: 175px;
+    height: 150px;
   }
+
+  select {
+    font-size: 2em;
+    height: 100px;
+  }
+
+  /* .logo a {
+    font-size: 3em;
+  }
+
+  .logo img {
+    width: 40%;
+  } */
 
 }

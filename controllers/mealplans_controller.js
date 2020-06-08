@@ -27,7 +27,6 @@ router.get('/new', isAuthenticated, (req, res) => {
 })
 
 
-
 // CREATE
 router.post('/', (req, res) => {
   User.findByIdAndUpdate(req.session.currentUser._id, { $push: {addedPlans:req.body} }, {new:true}, (error, updatedUser) => {

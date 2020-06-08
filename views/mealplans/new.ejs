@@ -7,37 +7,35 @@
   </head>
   <body class="body-create-plan">
     <%- include ('../partials/nav.ejs') %>
-    <div class="container">
-      <div class="add-dish">
-        <form class="new-form" action="/mealplans" method="POST">
-          <fieldset class="all-info">
-            <!-- Breakfast -->
-            <legend>Create Your Meal Plan</legend>
-            <label for="breakfast">Breakfast</label>
-            <select id="breakfast" name="breakfast">
-              <% for(let i = 0; i < foods.length; i++) { %>
-                  <option><%=foods[i].name%></option>
-              <% } %>
-            </select>
-            <!-- Lunch -->
-            <label for="lunch">Lunch</label>
-            <select id="lunch" name="lunch">
-              <% for(let i = 0; i < foods.length; i++) { %>
-                  <option><%=foods[i].name%></option>
-              <% } %>
-            </select>
-            <!-- Dinner -->
-            <label for="dinner">Dinner</label>
-            <select id="dinner" name="dinner">
-              <% for(let i = 0; i < foods.length; i++) { %>
-                  <option><%=foods[i].name%></option>
-              <% } %>
-            </select>
-            <!-- submit form -->
-            <input type="submit" value="CREATE NEW MEAL PLAN">
-          </fieldset>
-        </form>
-      </div>
+    <div class="container-v2">
+      <form class="new-form" action="/mealplans" method="POST">
+        <fieldset class="all-info">
+          <!-- Breakfast -->
+          <legend>Create Your Meal Plan</legend>
+          <label for="breakfast">Breakfast</label>
+          <select id="breakfast" name="breakfast">
+            <% for(let i = 0; i < foods.length; i++) { %>
+                <option><%=foods[i].name%></option>
+            <% } %>
+          </select>
+          <!-- Lunch -->
+          <label for="lunch">Lunch</label>
+          <select id="lunch" name="lunch">
+            <% for(let i = 0; i < foods.length; i++) { %>
+                <option><%=foods[i].name%></option>
+            <% } %>
+          </select>
+          <!-- Dinner -->
+          <label for="dinner">Dinner</label>
+          <select id="dinner" name="dinner">
+            <% for(let i = 0; i < foods.length; i++) { %>
+                <option><%=foods[i].name%></option>
+            <% } %>
+          </select>
+          <!-- submit form -->
+          <input type="submit" value="CREATE NEW MEAL PLAN">
+        </fieldset>
+      </form>
     </div>
     <div class="display-container">
       <% for(let i = 0; i < foods.length; i++) { %>
