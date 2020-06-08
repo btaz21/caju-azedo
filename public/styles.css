@@ -64,7 +64,7 @@ body {
 .about-text {
   width: 90%;
   margin: 0 auto;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .about-container p {
@@ -73,7 +73,7 @@ body {
 
 .about-container h1 {
   color: var(--yellow);
-  font-size: 3em
+  font-size: 4em
 }
 
 
@@ -118,7 +118,7 @@ nav li {
 nav a {
   text-decoration: none;
   color: var(--yellow);
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 nav a:hover {
