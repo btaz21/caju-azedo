@@ -150,7 +150,7 @@ nav a:hover {
   display: none;
   z-index: 1;
   text-align: right;
-  width: 200px;
+  width: 400px;
   border: 1px solid black;
   box-shadow: 5px 5px #4C4C4C;
 }
@@ -165,8 +165,8 @@ nav a:hover {
 
 .dropdown-content a {
   color: black;
-  width: 200px;
-  font-size: 1.2em;
+  /* width: 300px; */
+  font-size: 2.2em;
 }
 
 .dropdown:hover .dropdown-content {
@@ -181,12 +181,13 @@ nav a:hover {
 .side-tab {
   position: fixed;
   height: 225px;
-  width: 40px;
+  width: 70px;
   top: 385px;
   left: 0px;
   background-color: var(--yellow);
   border-radius: 0px 10px 10px 0px;
   text-align: center;
+  z-index: 1;
 }
 
 .side-tab a {
@@ -286,6 +287,7 @@ nav a:hover {
 .info-cards {
   width: 350px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .info-cards p, .info-cards img {
@@ -295,9 +297,10 @@ nav a:hover {
   height: 250px;
   overflow-y: scroll;
   box-sizing: border-box;
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
 }
+
 
 .show-delete {
   width: 140px;
