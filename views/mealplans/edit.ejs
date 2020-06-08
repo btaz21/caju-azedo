@@ -36,7 +36,9 @@
             </select>
             <!-- notes -->
             <label for="notes">Notes</label>
-            <textarea name="notes"></textarea>
+              <% for (let i = 0; i < plan.notes.length; i++) { %>
+                <textarea name="notes"><%=plan.notes[i]%></textarea>
+              <%}%>
             <!-- submit form -->
             <input type="submit" value="SUBMIT CHANGES">
           </fieldset>

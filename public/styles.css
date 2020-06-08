@@ -11,6 +11,7 @@
   /* border: 1px solid gold; */
 }
 
+
 body {
   font-family: 'Architects Daughter', cursive;
   margin: 0;
@@ -19,7 +20,6 @@ body {
   /* background-color: #ffffed; */
   position: relative;
 }
-
 
 
 ::-webkit-scrollbar-track {
@@ -43,6 +43,7 @@ body {
 /* ABOUT */
 /* ===== */
 
+
 .about-container {
   color: white;
   margin: 0 auto;
@@ -56,12 +57,12 @@ body {
 }
 
 .about-images {
-  width: 400px;
+  width: 90%;
   margin: 0 auto;
 }
 
 .about-text {
-  width: 400px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -311,7 +312,7 @@ nav a:hover {
 }
 
 .a-tags a:hover {
-  background-color: var(--green);
+  background-color: var(--red);
   border: 2px solid var(--yellow);
 }
 
@@ -580,3 +581,14 @@ h3 {
 .horarios {
   margin: 25px auto;;
 }
+
+
+/* MOBILE */
+
+/* @media (max-width: 735px) {
+
+  form {
+    width: 95%;
+  }
+
+} */
