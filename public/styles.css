@@ -588,7 +588,7 @@ h3 {
 @media (max-width: 1125px) {
 
   * {
-    border: 1px solid gold;
+    /* border: 1px solid gold; */
   }
 
   .index-cards {
@@ -605,16 +605,54 @@ h3 {
   }
 
   .about-container h1 {
-    font-size: 4em;
+    font-size: 6em;
   }
 
   .about-text {
     width: 90%;
+    font-size: 2.5em;
   }
 
   .about-images {
     width: 90%;
   }
 
+  .new-form {
+    width: 100%;
+  }
+
+  .add-dish {
+    width: 100%;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .all-info {
+    width: 85%;
+  }
+
+  legend {
+    font-size: 2em;
+  }
+
+  input {
+    font-size: 3em;
+  }
+
+  label {
+    font-size: 4em;
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  input[type=submit] {
+    font-size: 3em;
+    height: 175px;
+  }
 
 }
