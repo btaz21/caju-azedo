@@ -309,9 +309,7 @@ nav a:hover {
 
 .a-tags {
   width: 140px;
-  /* margin: 0 auto; */
   text-align: center;
-  padding: 15px 0;
   border-radius: 5px;
   display: flex;
 }
@@ -319,8 +317,9 @@ nav a:hover {
 .a-tags a {
   text-decoration: none;
   color: white;
-  padding: 14px 37px;
+  padding: 18px 40px;
   background-color: var(--yellow);
+  font-size: 1.5em;
   align-self: center;
   border-radius: 5px;
 }
@@ -334,7 +333,9 @@ nav a:hover {
 
 .double-trouble {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
 }
 
 /* ============== */
