@@ -102,10 +102,12 @@ nav {
   justify-content: center;
 }
 
-nav img {
+.logo a {
+  font-size: 2.5em;
+}
+
+.logo img {
   width: 100px;
-  transform: rotate(-45deg);
-  margin-bottom: 10px;
 }
 
 nav ul {
@@ -183,14 +185,15 @@ nav a:hover {
   top: 385px;
   left: 0px;
   background-color: var(--yellow);
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 10px 10px 0px;
+  text-align: center;
 }
 
 .side-tab a {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  margin-top: 20px;
-  margin-left: 8px;
+  /* margin-top: 20px; */
+  /* margin-left: 8px; */
   text-decoration: none;
   color: black;
 }
@@ -363,7 +366,7 @@ nav a:hover {
 .body-create-plan {
   background-image: url(https://i.imgur.com/HbkZLp8.jpg);
   /* background-size: cover; */
-  background-size: contain;
+  background-size: cover;
 }
 
 .container {
@@ -630,6 +633,10 @@ h4 {
     font-size: 7em;
   }
 
+  .login {
+    color: black;
+  }
+
   .returning-user {
     background-position: center;
   }
@@ -672,6 +679,10 @@ h4 {
   .container {
     margin: 0 auto;
     width: 85%
+  }
+
+  .container-v2 {
+    margin-top: 70px
   }
 
   .all-info {
@@ -720,6 +731,20 @@ h4 {
 
   .display {
     width: 45%;
+  }
+
+  .side-tab {
+    position: fixed;
+    height: 440px;
+    width: 100px;
+    top: 40%;
+    left: 0px;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .side-tab a {
+    font-size: 2em;
   }
 
 }
