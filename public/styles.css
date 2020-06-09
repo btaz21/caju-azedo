@@ -740,4 +740,9 @@ h4 {
     font-size: 2em;
   }
 
+  .logo a {
+    font-size: 3em;
+    text-align: center;
+  }
+
 }
