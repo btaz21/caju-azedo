@@ -7,10 +7,10 @@
   </head>
   <body class='new-user'>
     <%- include ('../partials/nav.ejs') %>
-    <h1>New User</h1>
     <div class="container">
       <form action="/users" method="POST">
         <fieldset>
+          <legend>Sign up</legend>
           <label for="name">Username:</label>
           <h5><%=messages.info%></h5>
           <input type="text" name="username" required>
