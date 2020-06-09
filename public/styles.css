@@ -20,8 +20,6 @@ body {
   position: relative;
 }
 
-
-
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: 10px;
@@ -315,6 +313,7 @@ nav a:hover {
   text-align: center;
   border-radius: 5px;
   display: flex;
+  margin-right: 10px;
 }
 
 .a-tags a {
@@ -339,7 +338,7 @@ nav a:hover {
 .double-trouble {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -388,6 +387,10 @@ nav a:hover {
   color: whitesmoke;
   width: 900px;
   margin: 20px auto;
+}
+
+.note h3 {
+  font-size: 1.5em;
 }
 
 fieldset {
@@ -450,6 +453,7 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   border: 2px solid var(--yellow);
+  font-size: 1.5em;
 }
 
 textarea:focus {
@@ -487,7 +491,7 @@ h4 {
 }
 
 #create-account {
-  color: var(--red);
+  color: var(--yellow);
 }
 
 
@@ -585,6 +589,10 @@ h4 {
   overflow-y: scroll;
   height: 150px;
   margin: 10px;
+}
+
+.notes-scroll p {
+  font-size: 1.5em;
 }
 
 /* MEAL PLAN NEW PAGE */
@@ -803,12 +811,12 @@ h4 {
   }
 
   .a-tags {
-    font-size: 1.5em;
+    font-size: 1.6em;
     /* padding: 0; */
   }
 
   .a-tags a {
-    padding: 11px 25px;
+    padding: 35px 25px;
   }
 
   .index-cards:hover {

@@ -7,7 +7,6 @@
   </head>
   <body class='create-dish'>
     <%- include ('../partials/nav.ejs') %>
-    <h1>Create New Dish</h1>
     <div class="container-v2">
       <form class="new-form" action="/foods" method="POST">
         <fieldset>
@@ -20,7 +19,7 @@
           <textarea id="description" name="description"></textarea>
           <!-- etymology -->
           <label for="etymology">Etymology of Name</label>
-          <input id="etymology" type="text" name="etymology">
+          <textarea id="description" name="etymology"></textarea>
           <!-- image link -->
           <label for="img">Image Link</label>
           <input id="img" type="text" name="img">
