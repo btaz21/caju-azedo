@@ -844,5 +844,13 @@ h4 {
     width: 700px;
   }
 
+  .account h4 {
+    margin: 40px auto;
+  }
+
+  #create-account {
+    font-size: 1.5em;
+  }
+
 
 }
