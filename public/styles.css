@@ -829,8 +829,6 @@ h4 {
     height: 80px !important;
   }
 
-
-
   .logo {
     width: 150px;
   }
@@ -845,11 +843,11 @@ h4 {
   }
 
   .account h4 {
-    margin: 40px auto;
+    margin-top: 60px;
   }
 
   #create-account {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
 
