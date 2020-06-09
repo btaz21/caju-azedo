@@ -10,22 +10,23 @@
     <h1>New User</h1>
     <div class="container">
       <form action="/users" method="POST">
-        <label for="name">Username:</label>
-        <h5><%=messages.info%></h5>
-        <input type="text" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-        <label for="name">Name:</label>
-        <input type="text" name="name">
-        <label for="color">Pick a caju:</label>
-        <select name="color">
-          <option>red</option>
-          <option>yellow</option>
-          <option>orange</option>
-        </select>
-        <input type="submit" value="Submit">
+        <fieldset>
+          <label for="name">Username:</label>
+          <h5><%=messages.info%></h5>
+          <input type="text" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" name="password">
+          <label for="name">Name:</label>
+          <input type="text" name="name">
+          <label for="color">Pick a caju:</label>
+          <select id="select-caju" name="color">
+            <option>red</option>
+            <option>yellow</option>
+            <option>orange</option>
+          </select>
+          <input type="submit" value="Submit">
+        </fieldset>
       </form>
     </div>
-
   </body>
 </html>

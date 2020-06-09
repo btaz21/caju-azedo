@@ -10,15 +10,17 @@
     <h2>Log-in</h2>
     <div class="container">
       <form action="/sessions" method="POST">
-        <label for="name">Username:</label>
-        <h5><%=messages.userAlert%></h5>
-        <input type="text" name="username" required>
-        <label for="color">Password:</label>
-        <h5><%=messages.passwordAlert%></h5>
-        <input type="password" name="password">
-        <input type="submit" value="Submit">
+        <fieldset>
+          <label for="name">Username:</label>
+          <h5><%=messages.userAlert%></h5>
+          <input type="text" name="username" required>
+          <label for="color">Password:</label>
+          <h5><%=messages.passwordAlert%></h5>
+          <input type="password" name="password">
+          <input type="submit" value="Submit">
+          <h4>Don't have an account? <a id="create-account" href="/users/new">Create an account</a></h4>
+        </fieldset>
       </form>
-      <h4>Don't have an account? <a id="create-account" href="/users/new">Create an account</a></h4>
     </div>
 
   </body>

@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter'); */
 @import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
 
 
@@ -376,10 +375,8 @@ nav a:hover {
 }
 
 .container {
-  /* display: flex;
-  justify-content: center; */
   color: whitesmoke;
-  width: 400px;
+  width: 600px;
   margin: 20px auto;
 }
 
@@ -388,10 +385,6 @@ nav a:hover {
   width: 900px;
   margin: 20px auto;
 }
-
-/* .new-form {
-  width: 700px;
-} */
 
 fieldset {
   border: 1px solid #ccc;
@@ -466,11 +459,6 @@ select {
   width: 100%;
   margin: 0 auto;
   font-size: 1.5em;
-}
-
-.all-info {
-  width: 60%;
-  margin: 0 auto;
 }
 
 h5 {
@@ -632,11 +620,11 @@ h4 {
   }
 
   h2 {
-    font-size: 7em;
+    font-size: 6em;
   }
 
   #menu {
-    font-size: 81px;
+    font-size: 110px;
   }
 
   .returning-user {
@@ -680,15 +668,48 @@ h4 {
     width: 90%;
   }
 
+  fieldset {
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+
+  .plan-index-card-flex {
+    flex-wrap: wrap;
+  }
+
+  .plan-index-card {
+    width:75%;
+  }
 
   .container {
     margin: 0 auto;
     width: 85%
   }
 
+  .note h3 {
+    font-size: 3em;
+  }
+
+  .horarios h3 {
+    font-size: 3em;
+  }
+
+  .horarios h4 {
+    font-size: 2em;
+  }
+
+  #textarea {
+    margin-bottom: 60px;
+    height: 200px;
+  }
+
+  .form-flex a {
+    font-size: 2.5em;
+  }
+
   .container-v2 {
     margin-top: 70px;
-    width: 90%;
+    width: 85%;
   }
 
   .new-form {
@@ -707,6 +728,7 @@ h4 {
   label {
     font-size: 4em;
     margin-top: 30px;
+    color: black;
   }
 
   h1 {
@@ -714,12 +736,14 @@ h4 {
   }
 
   h4 {
-    font-size: 2em;
+    font-size: 2.3em;
+    color: black;
   }
 
   input[type=submit] {
-    font-size: 2.3em;
-    /* height: 130px; */
+    font-size: 2.5em;
+    height: 120px;
+    margin: 0;
   }
 
   select {
@@ -774,7 +798,36 @@ h4 {
   }
 
   .index-cards:hover {
-    font-size: 50px;
+    font-size: 60px;
+  }
+
+  li {
+    font-size: 1.5em;
+  }
+
+  #select-caju {
+    margin-bottom: 80px;
+  }
+
+  .login {
+    padding: 0 10px;
+    font-size: 1.5em !important;
+    height: 80px !important;
+  }
+
+
+
+  .logo {
+    width: 150px;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 90%;
+  }
+
+  .dropdown-content {
+    width: 700px;
   }
 
 

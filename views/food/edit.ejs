@@ -7,33 +7,31 @@
   </head>
   <body class="food-edit-body">
     <%- include ('../partials/nav.ejs') %>
+    <h1>Edit Your Dish</h1>
     <div class="container">
-      <div class="add-dish">
-        <h1>Edit Your Dish</h1>
-        <form class="new-form" action="/foods/<%=user.id%>/<%=food.id%>/<%=index%>?_method=PUT" method="POST">
-          <fieldset class="all-info">
-            <legend>Details of the Dish</legend>
-            <!-- name of dish -->
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" value="<%= food.name %>">
-            <!-- description -->
-            <label for="description">Description</label>
-            <textarea id="description" name="description"><%= food.description %></textarea>
-            <!-- etymology -->
-            <label for="etymology">Etymology of Name</label>
-            <input id="etymology" type="text" name="etymology" value="<%= food.etymology %>">
-            <!-- image link -->
-            <label for="img">Image Link</label>
-            <input id="img" type="text" name="img" value="<%= food.img %>">
-            <!-- recipe link -->
-            <label for="recipe">Recipe</label>
-            <input id="recipe" type="text" name="recipe" value="<%= food.recipe %>">
-            <!-- submit form -->
-            <input type="hidden" name="index" value="<%=index%>">
-            <input type="submit" value="SUBMIT CHANGES">
-          </fieldset>
-        </form>
-      </div>
+      <form action="/foods/<%=user.id%>/<%=food.id%>/<%=index%>?_method=PUT" method="POST">
+        <fieldset>
+          <legend>Details of the Dish</legend>
+          <!-- name of dish -->
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" value="<%= food.name %>">
+          <!-- description -->
+          <label for="description">Description</label>
+          <textarea id="description" name="description"><%= food.description %></textarea>
+          <!-- etymology -->
+          <label for="etymology">Etymology of Name</label>
+          <textarea id="etymology" name="etymology"><%= food.etymology %></textarea>
+          <!-- image link -->
+          <label for="img">Image Link</label>
+          <input id="img" type="text" name="img" value="<%= food.img %>">
+          <!-- recipe link -->
+          <label for="recipe">Recipe</label>
+          <input id="recipe" type="text" name="recipe" value="<%= food.recipe %>">
+          <!-- submit form -->
+          <input type="hidden" name="index" value="<%=index%>">
+          <input type="submit" value="SUBMIT CHANGES">
+        </fieldset>
+      </form>
     </div>
   </body>
 </html>
