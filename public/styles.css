@@ -712,7 +712,7 @@ h4 {
   }
 
   input[type=submit] {
-    /* font-size: 3em; */
+    font-size: 3em;
     height: 130px;
   }
 
@@ -743,6 +743,22 @@ h4 {
   .logo a {
     font-size: 3em;
     text-align: center;
+  }
+
+  .show-info {
+    width: 90%;
+  }
+
+  .info-cards {
+    width: 90%;
+  }
+
+  input[type="password"] {
+    margin-bottom: 80px;
+  }
+
+  .delete-button {
+
   }
 
 }

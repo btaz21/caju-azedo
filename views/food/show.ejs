@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/../styles.css">
-  </head>
+  <%- include ('../partials/head.ejs') %>
   <body>
     <%- include ('../partials/nav.ejs') %>
     <div class="show-container">
@@ -15,7 +11,7 @@
             <a href="/foods/<%=user.id%>/<%=food.id%>/<%=index%>/edit">Edit</a>
           </div>
           <form class="show-delete" action="/foods/<%=user.id%>/<%=food.id%>/<%=index%>?_method=DELETE" method="post">
-            <input type="submit" value="Delete">
+            <input class="delete-button" type="submit" value="Delete">
           </form>
         </div>
         <img class="show-img" src="<%= food.img %>" alt="<%= food.name %>">
