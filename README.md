@@ -28,5 +28,6 @@ Full-stack, CRUD app built on Node.JS and MongoDB. and using Express as a ....us
 
 ## Unsolved Problems
 1. One of the biggest issues I had was using mongoose to manipulate the data when its heavily nested within the dataset. One workaround is to pull the whole dataset out, manipulate it with javascript, and then perform a doc.save(). This doesn't seem to work every time, however.
+2. CSS wonkiness - mobile form/inputs
 
 ## References

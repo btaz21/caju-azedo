@@ -7,7 +7,6 @@
   </head>
   <body class="food-edit-body">
     <%- include ('../partials/nav.ejs') %>
-    <h1>Edit Your Dish</h1>
     <div class="container">
       <form action="/foods/<%=user.id%>/<%=food.id%>/<%=index%>?_method=PUT" method="POST">
         <fieldset>

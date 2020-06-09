@@ -81,7 +81,7 @@ h2 {
 }
 
 .about-header {
-  color: var(--red);
+  color: var(--yellow);
 }
 
 
@@ -488,10 +488,12 @@ h4 {
 .account h4 {
   color: black;
   margin: 5px;
+  font-size: 1.5em;
 }
 
 #create-account {
   color: var(--yellow);
+  font-size: 1.5em;
 }
 
 
@@ -765,7 +767,7 @@ h4 {
   input[type=submit] {
     font-size: 2.5em;
     height: 120px;
-    margin: 0;
+    margin: 30px 0;
   }
 
   select {
