@@ -106,6 +106,7 @@ nav {
 
 .logo img {
   width: 100px;
+  align-self: flex-start;
 }
 
 nav ul {
@@ -401,6 +402,7 @@ fieldset {
 legend {
   padding: 0px 10px;
   background-color: var(--yellow);
+  font-size: 1.5em;
 }
 
 label {
@@ -638,11 +640,15 @@ h4 {
   }
 
   .returning-user {
-    background-position: center;
+    /* background-position: center; */
+    background-color: #161616;
+    background-image: none;
   }
 
   .new-user {
-    background-position: center;
+    /* background-position: center; */
+    background-color: #161616;
+    background-image: none;
   }
 
   .index-cards {
@@ -712,8 +718,8 @@ h4 {
   }
 
   input[type=submit] {
-    font-size: 3em;
-    height: 130px;
+    font-size: 2.3em;
+    /* height: 130px; */
   }
 
   select {
@@ -741,8 +747,9 @@ h4 {
   }
 
   .logo a {
-    font-size: 3em;
-    text-align: center;
+    /* font-size: 3em;
+    text-align: center; */
+    display: none;
   }
 
   .show-info {
@@ -757,8 +764,18 @@ h4 {
     margin-bottom: 80px;
   }
 
-  .delete-button {
-
+  .a-tags {
+    font-size: 1.5em;
+    /* padding: 0; */
   }
+
+  .a-tags a {
+    padding: 11px 25px;
+  }
+
+  .index-cards:hover {
+    font-size: 50px;
+  }
+
 
 }
