@@ -91,24 +91,24 @@ const seed = [
     recipe: ""
   },
   {
-    name: "",
+    name: "Caipirinha",
     description: "",
     etymology: "",
-    img: "",
+    img: "https://i.imgur.com/hlH5FeA.jpg",
     recipe: ""
   },
   {
-    name: "",
+    name: "Bolinho de Chuva",
     description: "",
     etymology: "",
-    img: "",
+    img: "https://i.imgur.com/sy2bjhz.jpg",
     recipe: ""
   },
   {
-    name: "",
+    name: "Acaraje",
     description: "",
     etymology: "",
-    img: "",
+    img: "https://i.imgur.com/Guj6pse.jpg",
     recipe: ""
   }
 ]
