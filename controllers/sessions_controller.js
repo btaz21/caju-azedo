@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
     else if (!foundUser) {
       req.flash('userAlert', 'Sorry, matching user not found' )
       res.redirect('/sessions/new')
-      // res.send('<a href = "/">Sorry, matching user not found</a>')
     }
     else {
       if (bcrypt.compareSync(req.body.password, foundUser.password)) {
@@ -32,7 +31,6 @@ router.post('/', (req, res) => {
       else {
         req.flash('passwordAlert', 'Sorry, password does not match')
         res.redirect('/sessions/new')
-        // res.send('<a href = "/">Sorry, password does not match</a>')
       }
     }
   })
