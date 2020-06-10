@@ -27,12 +27,12 @@ Tested on: Chrome for macOS: 81.0.4044.138
 
 ## Technologies Used
 Full-stack, CRUD app utilizing the following technologies:
-*Node.js
-*MongoDB / Atlas
-*Express.js
-*Javascript/HTML5/CSS3
-*Mongoose
-*Additional express dependencies: bcrypt, EJS, express-flash, express-sessions, method-override, dotenv
+* Node.js
+* MongoDB / Atlas
+* Express.js
+* Javascript/HTML5/CSS3
+* Mongoose
+* Additional express dependencies: bcrypt, EJS, express-flash, express-sessions, method-override, dotenv
 
 ## Challenges
 1. One of the big challenges in getting this app to function as a real app was to incorporate the food and mealplan schema into the user schema. This allowed me to have a user create his own account with dishes and mealplans separate from the other users of the app. It took a while and required reconfiguring all the different routes so that they modified the user schema.
