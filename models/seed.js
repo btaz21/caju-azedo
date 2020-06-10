@@ -85,17 +85,17 @@ const seed = [
   },
   {
     name: "Beijinho",
-    description: "",
+    description: "A typical Brazilian birthday party candy prepared with condensed milk, grated desiccated coconut, rolled over caster sugar or grated coconut and topped with a clove. Beijinho is the coconut version of the Brazilian brigadeiro. When rolled, it can be covered with granulated sugar or grated coconut. Traditionally a single clove is stuck in the top of the candy. It is believed that Beijinho was originally called \"Nun's kiss\" and formerly made with almonds, water and sugar.",
     etymology: "",
     img: "https://i.imgur.com/HxdL3B3.png",
-    recipe: ""
+    recipe: "https://www.iheartbrazil.com/beijinho-recipe-coconut-brigadeiro/"
   },
   {
     name: "Caipirinha",
     description: "",
     etymology: "",
     img: "https://i.imgur.com/hlH5FeA.jpg",
-    recipe: ""
+    recipe: "https://www.thespruceeats.com/caipirinha-recipe-759290"
   },
   {
     name: "Bolinho de Chuva",
