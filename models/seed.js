@@ -33,6 +33,83 @@ const seed = [
     etymology: "Mid 19th century: from Portuguese açaí, from Tupi-Guarani asaí",
     img: "https://i.imgur.com/pf0FkNZ.jpg",
     recipe: "https://www.tudogostoso.com.br/receita/58910-acai-na-tigela.html"
+  },
+  {
+    name: "Paçoca",
+    description: "Paçoca is a candy made out of ground peanuts, sugar and salt. Some recipes also add flour, such as corn flour, oats flour or cassava flour. It is typical of the Brazilian Caipira cuisine and most present in the countryside of southeastern states of São Paulo and Minas Gerais, being either manufactured or home-made. It is also very common during the Festa Junina, an annual festivity that celebrates the caipira lifestyle. It is known for its distinct dry texture and sweet taste, and is one of the most beloved Brazilian candies.",
+    etymology: "The name \"paçoca\" comes from the Tupi word \"posok\" (pronounced /pɔsɔk/) which means \"to crumble\" or \"to shatter,\" and is shared with the salty Paçoca dish. Both are a mix of cassava flour with other ingredients: peanut and sugar in the case of the sweet, and carne-de-sol (sun-dried-beef) for the salty dish. Both dishes seem to have originated from the same Native Brazilian customs, but have grown to be completely different products",
+    img: "https://i.imgur.com/1CDsU7l.jpg",
+    recipe: "https://www.oliviascuisine.com/pacoca-brazilian-peanut-candy/"
+  },
+  {
+    name: "Papo-de-anjo",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/uZ5Wk5p.jpg",
+    recipe: ""
+  },
+  {
+    name: "Tacaca",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/gq4dcE4.jpg",
+    recipe: ""
+  },
+  {
+    name: "Brigadeiro",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/pRoIa2j.jpg",
+    recipe: ""
+  },
+  {
+    name: "Maniçoba",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/iYMWNtV.jpg",
+    recipe: ""
+  },
+  {
+    name: "Vatapa",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/lXb5xrr.jpg",
+    recipe: ""
+  },
+  {
+    name: "Barreado",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/XuJY8Ty.jpg",
+    recipe: ""
+  },
+  {
+    name: "Beijinho",
+    description: "",
+    etymology: "",
+    img: "https://i.imgur.com/HxdL3B3.png",
+    recipe: ""
+  },
+  {
+    name: "",
+    description: "",
+    etymology: "",
+    img: "",
+    recipe: ""
+  },
+  {
+    name: "",
+    description: "",
+    etymology: "",
+    img: "",
+    recipe: ""
+  },
+  {
+    name: "",
+    description: "",
+    etymology: "",
+    img: "",
+    recipe: ""
   }
 ]
 
